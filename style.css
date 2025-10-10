@@ -1,0 +1,211 @@
+/* --- VARIABLES Y ESTILOS GLOBALES --- */
+:root {
+    --color-coral: #FF6B6B;
+    --color-gris-oscuro: #333333;
+    --color-gris-claro: #f4f4f4;
+    --color-blanco: #FFFFFF;
+    --fuente-principal: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-gris-oscuro);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; color: var(--color-coral); }
+h3 { font-size: 1.4rem; }
+
+a {
+    text-decoration: none;
+    color: var(--color-coral);
+}
+
+/* --- BOTONES --- */
+.btn-principal {
+    display: inline-block;
+    background-color: var(--color-coral);
+    color: var(--color-blanco);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- HEADER Y LOGO --- */
+.header {
+    padding: 1.5rem 2rem;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-gris-oscuro);
+}
+
+/* --- SECCIÓN INICIO (HERO) --- */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+.hero h1 {
+    max-width: 700px;
+}
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+/* --- BIBLIOTECA Y FILTROS --- */
+.filtros {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.filtro-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    transition: all 0.2s ease;
+}
+.filtro-btn:hover {
+    background-color: var(--color-gris-claro);
+    border-color: var(--color-coral);
+}
+.filtro-btn.activo {
+    background-color: var(--color-coral);
+    color: var(--color-blanco);
+    border-color: var(--color-coral);
+}
+
+.juegos-grilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+.game-card {
+    background: var(--color-blanco);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.game-card p {
+    color: #777;
+    margin-bottom: 1rem;
+}
+.game-card .category {
+    background-color: var(--color-gris-claro);
+    color: var(--color-gris-oscuro);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.game-card.hidden {
+    display: none;
+}
+
+/* --- FORMULARIO DE SUGERENCIAS --- */
+#sugerir { background-color: var(--color-gris-claro); padding-top: 4rem; padding-bottom: 4rem; margin-bottom: 0;}
+.sugerir-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.sugerir-form input, .sugerir-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+}
+.sugerir-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: var(--color-gris-oscuro);
+    color: var(--color-blanco);
+    padding: 3rem 2rem 1.5rem;
+    text-align: center;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.footer-about { flex: 2; text-align: left; min-width: 250px;}
+.footer-social { flex: 1; text-align: right; min-width: 200px;}
+.footer-social a {
+    color: var(--color-blanco);
+    margin-left: 1.5rem;
+}
+.footer-copy {
+    font-size: 0.9rem;
+    color: #aaa;
+    border-top: 1px solid #555;
+    padding-top: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .hero { min-height: 50vh; }
+    .footer-container { flex-direction: column; text-align: center; }
+    .footer-about, .footer-social { text-align: center; }
+    .footer-social a { margin: 0 0.8rem; }
+}

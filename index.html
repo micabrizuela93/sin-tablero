@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin Tablero - Juegos para cada momento</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            🎲 Sin Tablero
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <h1>Encontrá el juego perfecto para cada momento.</h1>
+            <p>Una biblioteca de juegos que solo necesitan imaginación (y a veces, papel y lápiz).</p>
+            <a href="#biblioteca" class="btn-principal">Explorar juegos</a>
+        </section>
+
+        <section id="biblioteca" class="container">
+            <h2>Biblioteca de Juegos</h2>
+            
+            <div class="filtros">
+                <button class="filtro-btn activo" data-filter="todos">Todos</button>
+                <button class="filtro-btn" data-filter="juntadas">Juntadas</button>
+                <button class="filtro-btn" data-filter="citas">Citas</button>
+                <button class="filtro-btn" data-filter="familia">Familia</button>
+                <button class="filtro-btn" data-filter="rompehielo">Rompehielo</button>
+            </div>
+
+            <div class="juegos-grilla">
+                
+                <article class="game-card" data-category="juntadas rompehielo">
+                    <h3>Cadáver Exquisito</h3>
+                    <p>3+ jugadores • 10 min</p>
+                    <span class="category">Juntadas</span>
+                </article>
+
+                <article class="game-card" data-category="juntadas familia">
+                    <h3>Dígalo con Mímica</h3>
+                    <p>4+ jugadores • 20 min</p>
+                    <span class="category">Familia</span>
+                </article>
+
+                <article class="game-card" data-category="citas rompehielo">
+                    <h3>Dos Verdades, Una Mentira</h3>
+                    <p>2+ jugadores • 15 min</p>
+                    <span class="category">Rompehielo</span>
+                </article>
+
+                <article class="game-card" data-category="juntadas">
+                    <h3>El Asesino</h3>
+                    <p>6+ jugadores • 15 min</p>
+                    <span class="category">Juntadas</span>
+                </article>
+
+                <article class="game-card" data-category="familia">
+                    <h3>Veo Veo</h3>
+                    <p>2+ jugadores • 5 min</p>
+                    <span class="category">Familia</span>
+                </article>
+
+                <article class="game-card" data-category="citas">
+                    <h3>Preguntas Profundas</h3>
+                    <p>2 jugadores • 30 min</p>
+                    <span class="category">Citas</span>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="sugerir" class="container">
+            <h2>¿Conocés otro juego?</h2>
+            <p>¡Compartí tus ideas con la comunidad! Tu sugerencia será revisada y añadida a la biblioteca.</p>
+            <form class="sugerir-form" id="suggestionForm">
+                <input type="text" name="nombre" placeholder="Tu Nombre (opcional)">
+                <input type="text" name="juego" placeholder="Nombre del Juego" required>
+                <textarea name="descripcion" placeholder="Explica brevemente la dinámica..." required></textarea>
+                <button type="submit" class="btn-principal">Enviar sugerencia</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> es un proyecto para compartir la alegría de jugar en cualquier lugar, sin necesidad de elementos complejos.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero. Creado con ❤️ en Argentina.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

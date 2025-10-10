@@ -25,6 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- HACER LOS GAME CARDS CLICKEABLES ---
+    gameCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            const gameId = card.dataset.id;
+            window.location.href = `juego-${gameId}.html`;
+        });
+    });
 
     // --- LÓGICA PARA EL FORMULARIO DE SUGERENCIAS ---
     const suggestionForm = document.getElementById('suggestionForm');

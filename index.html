@@ -22,165 +22,237 @@
     <main>
         <section id="inicio" class="hero">
             <h1>Encontrá el juego perfecto para cada momento.</h1>
-            <p>Una biblioteca de juegos que solo necesitan imaginación (y a veces, papel y lápiz).</p>
+            <p>Una biblioteca de juegos organizada por lo que necesitás para jugar.</p>
             <a href="#biblioteca" class="btn-principal">Explorar juegos</a>
         </section>
 
         <section id="biblioteca" class="container">
             <h2>Biblioteca de Juegos</h2>
             
-            <div class="filtros">
-                <button class="filtro-btn activo" data-filter="todos">Todos</button>
-                <button class="filtro-btn" data-filter="juntadas">Juntadas</button>
-                <button class="filtro-btn" data-filter="citas">Citas</button>
-                <button class="filtro-btn" data-filter="familia">Familia</button>
-                <button class="filtro-btn" data-filter="rompehielo">Rompehielo</button>
+            <!-- CATEGORÍAS PRINCIPALES -->
+            <div class="filtros-principales">
+                <button class="filtro-principal-btn activo" data-categoria-principal="sin-materiales">
+                    🎭 Sin Materiales
+                </button>
+                <button class="filtro-principal-btn" data-categoria-principal="con-materiales">
+                    📝 Con Materiales Básicos
+                </button>
+                <button class="filtro-principal-btn" data-categoria-principal="cartas">
+                    🎴 Cartas Españolas
+                </button>
             </div>
 
-            <div class="juegos-grilla">
-                
-                <article class="game-card" data-category="juntadas rompehielo" data-id="cadáver-exquisito">
-                    <h3>Cadáver Exquisito</h3>
-                    <p>3+ jugadores • 10 min</p>
-                    <span class="category">Juntadas</span>
-                </article>
-
-                <article class="game-card" data-category="juntadas familia" data-id="mímica">
-                    <h3>Dígalo con Mímica</h3>
-                    <p>4+ jugadores • 20 min</p>
-                    <span class="category">Familia</span>
-                </article>
-
-                <article class="game-card" data-category="citas rompehielo" data-id="verdades-mentira">
-                    <h3>Dos Verdades, Una Mentira</h3>
-                    <p>2+ jugadores • 15 min</p>
-                    <span class="category">Rompehielo</span>
-                </article>
-
-                <article class="game-card" data-category="juntadas" data-id="asesino">
-                    <h3>El Asesino</h3>
-                    <p>6+ jugadores • 15 min</p>
-                    <span class="category">Juntadas</span>
-                </article>
-
-                <article class="game-card" data-category="familia" data-id="veo-veo">
-                    <h3>Veo Veo</h3>
-                    <p>2+ jugadores • 5 min</p>
-                    <span class="category">Familia</span>
-                </article>
-
-                <article class="game-card" data-category="citas" data-id="preguntas-profundas">
-                    <h3>Preguntas Profundas</h3>
-                    <p>2 jugadores • 30 min</p>
-                    <span class="category">Citas</span>
-                </article>
-
-                <article class="game-card" data-category="juntadas familia" data-id="contacto">
-                    <h3>Contacto</h3>
-                    <p>3+ jugadores • 15 min</p>
-                    <span class="category">Juntadas</span>
-                </article>
-
-                <article class="game-card" data-category="familia rompehielo" data-id="palabras-encadenadas">
-                    <h3>Palabras Encadenadas</h3>
-                    <p>2+ jugadores • 10 min</p>
-                    <span class="category">Familia</span>
-                </article>
-
-                <article class="game-card" data-category="juntadas familia" data-id="historia-encadenada">
-                    <h3>Historia Encadenada</h3>
-                    <p>3+ jugadores • 15 min</p>
-                    <span class="category">Juntadas</span>
-                </article>
-
-                <article class="game-card" data-category="juntadas rompehielo" data-id="pasar-la-frontera">
-                    <h3>Pasar la Frontera</h3>
-                    <p>4+ jugadores • 20 min</p>
-                    <span class="category">Juntadas</span>
-                </article>
-
-                <article class="game-card" data-category="juntadas" data-id="batata-macabra">
-                    <h3>Batata Macabra</h3>
-                    <p>4+ jugadores • 15 min</p>
-                    <span class="category">Juntadas</span>
-                </article>
-
-                <article class="game-card" data-category="rompehielo citas" data-id="palabra-asociada">
-                    <h3>La Palabra Asociada</h3>
-                    <p>3+ jugadores • 10 min</p>
-                    <span class="category">Rompehielo</span>
-                </article>
-
-                <article class="game-card" data-category="juntadas" data-id="palabra-asociada-reversa">
-                    <h3>Palabra Asociada Reversa</h3>
-                    <p>4+ jugadores • 15 min</p>
-                    <span class="category">Juntadas</span>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- NUEVA SECCIÓN: JUEGOS CON CARTAS -->
-        <section id="cartas" class="container" style="background-color: var(--color-gris-claro); padding: 4rem 2rem; margin: 4rem -2rem; border-radius: 20px;">
-            <h2>🎴 Juegos con Cartas Españolas</h2>
-            <p>Descubrí los juegos más populares que podés jugar con un mazo de cartas españolas.</p>
-            
-            <div class="filtros">
-                <button class="filtro-btn activo" data-filter="todos-cartas">Todos</button>
-                <button class="filtro-btn" data-filter="familia-cartas">Familia</button>
-                <button class="filtro-btn" data-filter="apuestas-cartas">Apuestas</button>
-                <button class="filtro-btn" data-filter="estrategia-cartas">Estrategia</button>
-                <button class="filtro-btn" data-filter="rapidos-cartas">Rápidos</button>
+            <!-- SUBCATEGORÍAS (se muestran según categoría principal) -->
+            <div class="subcategorias" id="subcategorias-sin-materiales" style="display: block;">
+                <div class="filtros">
+                    <button class="filtro-btn activo" data-filter="todos-sin">Todos</button>
+                    <button class="filtro-btn" data-filter="juntadas-sin">Juntadas</button>
+                    <button class="filtro-btn" data-filter="citas-sin">Citas</button>
+                    <button class="filtro-btn" data-filter="familia-sin">Familia</button>
+                    <button class="filtro-btn" data-filter="rompehielo-sin">Rompehielo</button>
+                </div>
             </div>
 
-            <div class="juegos-grilla">
-                <article class="game-card" data-category="estrategia-cartas" data-id="truco">
-                    <h3>Truco</h3>
-                    <p>4 jugadores • 30 min</p>
-                    <span class="category">Estrategia</span>
-                </article>
+            <div class="subcategorias" id="subcategorias-con-materiales" style="display: none;">
+                <div class="filtros">
+                    <button class="filtro-btn activo" data-filter="todos-con">Todos</button>
+                    <button class="filtro-btn" data-filter="papel-lapiz">Papel y Lápiz</button>
+                    <button class="filtro-btn" data-filter="objetos-cotidianos">Objetos Cotidianos</button>
+                    <button class="filtro-btn" data-filter="exteriores">Exteriores</button>
+                </div>
+            </div>
 
-                <article class="game-card" data-category="familia-cartas" data-id="chinchon">
-                    <h3>Chinchón</h3>
-                    <p>2-6 jugadores • 45 min</p>
-                    <span class="category">Familia</span>
-                </article>
+            <div class="subcategorias" id="subcategorias-cartas" style="display: none;">
+                <div class="filtros">
+                    <button class="filtro-btn activo" data-filter="todos-cartas">Todos</button>
+                    <button class="filtro-btn" data-filter="familia-cartas">Familia</button>
+                    <button class="filtro-btn" data-filter="apuestas-cartas">Apuestas</button>
+                    <button class="filtro-btn" data-filter="estrategia-cartas">Estrategia</button>
+                    <button class="filtro-btn" data-filter="rapidos-cartas">Rápidos</button>
+                </div>
+            </div>
 
-                <article class="game-card" data-category="apuestas-cartas" data-id="mus">
-                    <h3>Mus</h3>
-                    <p>4 jugadores • 60 min</p>
-                    <span class="category">Apuestas</span>
-                </article>
+            <!-- JUEGOS SIN MATERIALES (Categoría por defecto) -->
+            <div class="categoria-juegos" id="juegos-sin-materiales" style="display: block;">
+                <div class="juegos-grilla">
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin rompehielo-sin" data-id="cadáver-exquisito">
+                        <h3>Cadáver Exquisito</h3>
+                        <p>3+ jugadores • 10 min</p>
+                        <span class="category">Juntadas</span>
+                    </article>
 
-                <article class="game-card" data-category="rapidos-cartas" data-id="casino">
-                    <h3>Casino</h3>
-                    <p>2-4 jugadores • 20 min</p>
-                    <span class="category">Rápidos</span>
-                </article>
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin familia-sin" data-id="mímica">
+                        <h3>Dígalo con Mímica</h3>
+                        <p>4+ jugadores • 20 min</p>
+                        <span class="category">Familia</span>
+                    </article>
 
-                <article class="game-card" data-category="familia-cartas rapidos-cartas" data-id="escoba-del-15">
-                    <h3>Escoba del 15</h3>
-                    <p>2-4 jugadores • 25 min</p>
-                    <span class="category">Familia</span>
-                </article>
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="citas-sin rompehielo-sin" data-id="verdades-mentira">
+                        <h3>Dos Verdades, Una Mentira</h3>
+                        <p>2+ jugadores • 15 min</p>
+                        <span class="category">Rompehielo</span>
+                    </article>
 
-                <article class="game-card" data-category="estrategia-cartas" data-id="tute">
-                    <h3>Tute</h3>
-                    <p>2-4 jugadores • 40 min</p>
-                    <span class="category">Estrategia</span>
-                </article>
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin" data-id="asesino">
+                        <h3>El Asesino</h3>
+                        <p>6+ jugadores • 15 min</p>
+                        <span class="category">Juntadas</span>
+                    </article>
 
-                <article class="game-card" data-category="rapidos-cartas" data-id="burro">
-                    <h3>Burro</h3>
-                    <p>3-6 jugadores • 15 min</p>
-                    <span class="category">Rápidos</span>
-                </article>
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="familia-sin" data-id="veo-veo">
+                        <h3>Veo Veo</h3>
+                        <p>2+ jugadores • 5 min</p>
+                        <span class="category">Familia</span>
+                    </article>
 
-                <article class="game-card" data-category="familia-cartas" data-id="pochada">
-                    <h3>Pochada</h3>
-                    <p>2-5 jugadores • 30 min</p>
-                    <span class="category">Familia</span>
-                </article>
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="citas-sin" data-id="preguntas-profundas">
+                        <h3>Preguntas Profundas</h3>
+                        <p>2 jugadores • 30 min</p>
+                        <span class="category">Citas</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin familia-sin" data-id="contacto">
+                        <h3>Contacto</h3>
+                        <p>3+ jugadores • 15 min</p>
+                        <span class="category">Juntadas</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="familia-sin rompehielo-sin" data-id="palabras-encadenadas">
+                        <h3>Palabras Encadenadas</h3>
+                        <p>2+ jugadores • 10 min</p>
+                        <span class="category">Familia</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin familia-sin" data-id="historia-encadenada">
+                        <h3>Historia Encadenada</h3>
+                        <p>3+ jugadores • 15 min</p>
+                        <span class="category">Juntadas</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin rompehielo-sin" data-id="pasar-la-frontera">
+                        <h3>Pasar la Frontera</h3>
+                        <p>4+ jugadores • 20 min</p>
+                        <span class="category">Juntadas</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin" data-id="batata-macabra">
+                        <h3>Batata Macabra</h3>
+                        <p>4+ jugadores • 15 min</p>
+                        <span class="category">Juntadas</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="rompehielo-sin citas-sin" data-id="palabra-asociada">
+                        <h3>La Palabra Asociada</h3>
+                        <p>3+ jugadores • 10 min</p>
+                        <span class="category">Rompehielo</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="sin-materiales" data-subcategoria="juntadas-sin" data-id="palabra-asociada-reversa">
+                        <h3>Palabra Asociada Reversa</h3>
+                        <p>4+ jugadores • 15 min</p>
+                        <span class="category">Juntadas</span>
+                    </article>
+                </div>
+            </div>
+
+            <!-- JUEGOS CON MATERIALES BÁSICOS -->
+            <div class="categoria-juegos" id="juegos-con-materiales" style="display: none;">
+                <div class="juegos-grilla">
+                    <article class="game-card" data-categoria="con-materiales" data-subcategoria="papel-lapiz" data-id="ahorcado">
+                        <h3>Ahorcado</h3>
+                        <p>2+ jugadores • 10 min</p>
+                        <span class="category">Papel y Lápiz</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="con-materiales" data-subcategoria="papel-lapiz" data-id="tateti">
+                        <h3>Ta-Te-Ti</h3>
+                        <p>2 jugadores • 5 min</p>
+                        <span class="category">Papel y Lápiz</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="con-materiales" data-subcategoria="papel-lapiz" data-id="pictionary-casero">
+                        <h3>Pictionary Casero</h3>
+                        <p>4+ jugadores • 20 min</p>
+                        <span class="category">Papel y Lápiz</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="con-materiales" data-subcategoria="objetos-cotidianos" data-id="botella">
+                        <h3>La Botella</h3>
+                        <p>4+ jugadores • 15 min</p>
+                        <span class="category">Objetos Cotidianos</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="con-materiales" data-subcategoria="objetos-cotidianos" data-id="sillas-musicales">
+                        <h3>Sillas Musicales</h3>
+                        <p>5+ jugadores • 10 min</p>
+                        <span class="category">Objetos Cotidianos</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="con-materiales" data-subcategoria="exteriores" data-id="escondidas">
+                        <h3>Escondidas</h3>
+                        <p>3+ jugadores • 20 min</p>
+                        <span class="category">Exteriores</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="con-materiales" data-subcategoria="exteriores" data-id="rayuela">
+                        <h3>Rayuela</h3>
+                        <p>2+ jugadores • 15 min</p>
+                        <span class="category">Exteriores</span>
+                    </article>
+                </div>
+            </div>
+
+            <!-- JUEGOS CON CARTAS ESPAÑOLAS -->
+            <div class="categoria-juegos" id="juegos-cartas" style="display: none;">
+                <div class="juegos-grilla">
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="estrategia-cartas" data-id="truco">
+                        <h3>Truco</h3>
+                        <p>4 jugadores • 30 min</p>
+                        <span class="category">Estrategia</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="familia-cartas" data-id="chinchon">
+                        <h3>Chinchón</h3>
+                        <p>2-6 jugadores • 45 min</p>
+                        <span class="category">Familia</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="apuestas-cartas" data-id="mus">
+                        <h3>Mus</h3>
+                        <p>4 jugadores • 60 min</p>
+                        <span class="category">Apuestas</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="rapidos-cartas" data-id="casino">
+                        <h3>Casino</h3>
+                        <p>2-4 jugadores • 20 min</p>
+                        <span class="category">Rápidos</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="familia-cartas rapidos-cartas" data-id="escoba-del-15">
+                        <h3>Escoba del 15</h3>
+                        <p>2-4 jugadores • 25 min</p>
+                        <span class="category">Familia</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="estrategia-cartas" data-id="tute">
+                        <h3>Tute</h3>
+                        <p>2-4 jugadores • 40 min</p>
+                        <span class="category">Estrategia</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="rapidos-cartas" data-id="burro">
+                        <h3>Burro</h3>
+                        <p>3-6 jugadores • 15 min</p>
+                        <span class="category">Rápidos</span>
+                    </article>
+
+                    <article class="game-card" data-categoria="cartas" data-subcategoria="familia-cartas" data-id="pochada">
+                        <h3>Pochada</h3>
+                        <p>2-5 jugadores • 30 min</p>
+                        <span class="category">Familia</span>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -198,14 +270,18 @@
                 </div>
 
                 <div class="form-group">
-                    <select name="categoria" required>
-                        <option value="">Selecciona una categoría *</option>
-                        <option value="juntadas">Juntadas</option>
-                        <option value="citas">Citas</option>
-                        <option value="familia">Familia</option>
-                        <option value="rompehielo">Rompehielo</option>
+                    <select name="categoria-principal" id="categoria-principal-form" required>
+                        <option value="">Categoría Principal *</option>
+                        <option value="sin-materiales">Sin Materiales</option>
+                        <option value="con-materiales">Con Materiales Básicos</option>
                         <option value="cartas">Cartas Españolas</option>
-                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select name="subcategoria" id="subcategoria-form" required>
+                        <option value="">Subcategoría *</option>
+                        <!-- Las opciones se llenarán con JavaScript -->
                     </select>
                 </div>
 
@@ -248,7 +324,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
-                <p><strong>Sin Tablero</strong> es un proyecto para compartir la alegría de jugar en cualquier lugar, sin necesidad de elementos complejos.</p>
+                <p><strong>Sin Tablero</strong> es un proyecto para compartir la alegría de jugar en cualquier lugar.</p>
             </div>
             <div class="footer-social">
                 <a href="#">Instagram</a>

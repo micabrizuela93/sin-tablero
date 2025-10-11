@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Asesino - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-detail {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: left;
+        }
+        .game-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .game-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 2rem;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            background: var(--color-gris-claro);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-coral);
+            font-weight: bold;
+        }
+        .warning {
+            background: #ffe6e6;
+            border-left: 4px solid #ff6b6b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>El Asesino</h1>
+                <div class="game-meta">
+                    <span class="meta-item">6+ jugadores</span>
+                    <span class="meta-item">15 minutos</span>
+                    <span class="meta-item">Juntadas</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🔪 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Papelitos pequeños para sorteo</p>
+                
+                <div class="warning">
+                    <p><strong>⚠️ Importante:</strong> Este juego es de suspenso y diversión, no promueve la violencia. Juega con respeto y en un ambiente de confianza.</p>
+                </div>
+
+                <h3>Instrucciones:</h3>
+                <ol>
+                    <li>Preparen papeles pequeños, uno por cada jugador.</li>
+                    <li>En uno de los papeles escriban "Asesino", en otro "Detective", y en los demás "Civil".</li>
+                    <li>Cada jugador toma un papel al azar sin mostrarlo a los demás.</li>
+                    <li>El Asesino debe "eliminar" jugadores haciendo contacto visual y guiñando un ojo discretamente.</li>
+                    <li>Si un jugador recibe un guiño, cuenta hasta 5 y anuncia "¡He sido eliminado!"</li>
+                    <li>El Detective trata de descubrir quién es el Asesino antes de que elimine a todos.</li>
+                    <li>Los jugadores pueden acusar en cualquier momento. Si aciertan, ganan. Si no, el acusador queda eliminado.</li>
+                </ol>
+
+                <h3>🎭 Roles explicados:</h3>
+                <ul>
+                    <li><strong>Asesino:</strong> Debe eliminar a todos sin ser descubierto</li>
+                    <li><strong>Detective:</strong> Debe identificar al asesino mediante la observación</li>
+                    <li><strong>Civiles:</strong> Deben sobrevivir y ayudar al detective con pistas</li>
+                </ul>
+
+                <h3>💡 Consejos estratégicos:</h3>
+                <ul>
+                    <li>El Asesino: Sé discreto, no elimines muy rápido</li>
+                    <li>Detective: Observa patrones de miradas y comportamientos sospechosos</li>
+                    <li>Civiles: No acusen sin evidencia, observen quién mira mucho a las víctimas</li>
+                </ul>
+
+                <h3>🚀 Variantes populares:</h3>
+                <ul>
+                    <li><strong>Con múltiples asesinos:</strong> Para grupos más grandes</li>
+                    <li><strong>Con médico:</strong> Un rol que puede salvar eliminados</li>
+                    <li><strong>Versión silenciosa:</strong> Sin hablar, solo gestos</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

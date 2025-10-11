@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dos Verdades, Una Mentira - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-detail {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: left;
+        }
+        .game-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .game-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 2rem;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            background: var(--color-gris-claro);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-coral);
+            font-weight: bold;
+        }
+        .tip-box {
+            background: #fff9e6;
+            border-left: 4px solid #ffd700;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Dos Verdades, Una Mentira</h1>
+                <div class="game-meta">
+                    <span class="meta-item">2+ jugadores</span>
+                    <span class="meta-item">15 minutos</span>
+                    <span class="meta-item">Citas • Rompehielo</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🕵️ Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Ninguno, solo tu imaginación</p>
+                
+                <h3>Instrucciones:</h3>
+                <ol>
+                    <li>Cada jugador piensa en tres afirmaciones sobre sí mismo.</li>
+                    <li>Dos deben ser VERDADERAS y una debe ser FALSA.</li>
+                    <li>Por turnos, cada jugador dice sus tres afirmaciones al grupo.</li>
+                    <li>Los demás jugadores discuten y tratan de adivinar cuál es la mentira.</li>
+                    <li>Después de que todos hayan votado, se revela la mentira.</li>
+                    <li>El jugador que acierta la mentira gana un punto (opcional).</li>
+                </ol>
+
+                <div class="tip-box">
+                    <h3>💡 Ejemplos de afirmaciones:</h3>
+                    <p><strong>Para hacerlo interesante:</strong></p>
+                    <ul>
+                        <li>"Una vez conocí a mi actor favorito"</li>
+                        <li>"Tengo un talento secreto para..."</li>
+                        <li>"Cuando era niño, me pasó algo increíble..."</li>
+                        <li>"Tengo un miedo inusual a..."</li>
+                    </ul>
+                </div>
+
+                <h3>🎯 Consejos para el juego:</h3>
+                <ul>
+                    <li>Mezcla verdades sorprendentes con mentiras creíbles</li>
+                    <li>Usa historias personales que pocos conozcan</li>
+                    <li>Perfecto para conocerse mejor en citas o grupos nuevos</li>
+                    <li>Mantén un ambiente de confianza y respeto</li>
+                </ul>
+
+                <h3>🚀 Variantes:</h3>
+                <ul>
+                    <li><strong>Versión rápida:</strong> Solo una verdad y una mentira</li>
+                    <li><strong>Versión extrema:</strong> Tres mentiras y una verdad</li>
+                    <li><strong>Con temas:</strong> Solo sobre viajes, trabajo, etc.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

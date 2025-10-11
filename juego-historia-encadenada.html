@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Encadenada - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-detail {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: left;
+        }
+        .game-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .game-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 2rem;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            background: var(--color-gris-claro);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-coral);
+            font-weight: bold;
+        }
+        .story-example {
+            background: #e6f7ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #69c0ff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Historia Encadenada</h1>
+                <div class="game-meta">
+                    <span class="meta-item">3+ jugadores</span>
+                    <span class="meta-item">15-30 minutos</span>
+                    <span class="meta-item">Juntadas • Familia</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>📖 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Ninguno, solo imaginación</p>
+                
+                <h3>Instrucciones:</h3>
+                <ol>
+                    <li>Un jugador comienza una historia con una oración (ej: "Había una vez un dragón que le tenía miedo al fuego").</li>
+                    <li>El siguiente jugador continúa la historia agregando una oración más.</li>
+                    <li>Cada jugador va agregando una oración por turno.</li>
+                    <li>La historia debe tener coherencia y continuar el hilo narrativo.</li>
+                    <li>El juego termina cuando decidan o cuando la historia llegue a un final natural.</li>
+                </ol>
+
+                <div class="story-example">
+                    <h4>📝 Ejemplo de historia encadenada:</h4>
+                    <p><strong>Jugador 1:</strong> "Había una vez un astronauta que se perdió en el espacio."<br>
+                    <strong>Jugador 2:</strong> "De repente, vio una luz brillante acercándose a su nave."<br>
+                    <strong>Jugador 3:</strong> "Era una nave alienígena con forma de dona gigante."<br>
+                    <strong>Jugador 4:</strong> "De la nave salió un alien que hablaba perfecto español..."</p>
+                </div>
+
+                <h3>🎭 Consejos para mejores historias:</h3>
+                <ul>
+                    <li>Introducir personajes interesantes con personalidades definidas</li>
+                    <li>Crear conflictos o problemas que resolver</li>
+                    <li>Incluir elementos sorpresa para mantener el interés</li>
+                    <li>Intentar que cada aporte avance la trama</li>
+                </ul>
+
+                <h3>🚀 Variantes creativas:</h3>
+                <ul>
+                    <li><strong>Con una palabra clave:</strong> Cada oración debe incluir una palabra específica</li>
+                    <li><strong>Con género:</strong> Solo comedia, solo terror, solo romance</li>
+                    <li><strong>Con tiempo límite:</strong> Solo 10 segundos para pensar cada aporte</li>
+                    <li><strong>Versión una palabra:</strong> Cada jugador agrega solo una palabra a la vez</li>
+                </ul>
+
+                <h3>🌟 Temas para empezar:</h3>
+                <ul>
+                    <li>"El día que los animales empezaron a hablar"</li>
+                    <li"Un descubrimiento en el sótano de la abuela"</li>
+                    <li>"La máquina del tiempo que solo iba hacia atrás"</li>
+                    <li>"El chef que cocinaba con magia"</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

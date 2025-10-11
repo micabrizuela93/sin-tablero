@@ -8,295 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .game-detail {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-            text-align: left;
-        }
-        .game-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .game-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0 2rem;
-            flex-wrap: wrap;
-        }
-        .meta-item {
-            background: var(--color-gris-claro);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        .instructions {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            color: var(--color-coral);
-            font-weight: bold;
-        }
-        .association-example {
-            background: #f9f0ff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #b37feb;
-        }
-        .argentina-flag {
-            color: #74acdf;
-            font-weight: bold;
-        }
-        .vegan-emoji {
-            color: #78b159;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="logo">
-            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
-        </div>
-    </header>
-
-    <main class="container">
-        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
-        
-        <div class="game-detail">
-            <div class="game-header">
-                <h1>La Palabra Asociada <span class="argentina-flag">🇦🇷</span></h1>
-                <div class="game-meta">
-                    <span class="meta-item">3+ jugadores</span>
-                    <span class="meta-item">10-20 minutos</span>
-                    <span class="meta-item">Rompehielo • Citas</span>
-                </div>
-            </div>
-
-            <div class="instructions">
-                <h2>💭 Cómo Jugar</h2>
-                <p><strong>Materiales necesarios:</strong> Ninguno</p>
-                
-                <h3>Instrucciones:</h3>
-                <ol>
-                    <li>Un jugador piensa en una palabra secreta (ej: "MATE").</li>
-                    <li>Dice en voz alta una palabra que asocie con su palabra secreta (ej: "YERBA").</li>
-                    <li>Los demás jugadores, por turnos, dicen palabras que asocien con la palabra anterior.</li>
-                    <li>Cuando un jugador cree saber la palabra secreta, puede intentar adivinarla.</li>
-                    <li>Si acierta, gana un punto y piensa la siguiente palabra. Si no, queda eliminado de esa ronda.</li>
-                    <li>El juego continúa hasta que alguien acierte la palabra secreta.</li>
-                </ol>
-
-                <div class="association-example">
-                    <h4>📝 Ejemplo típico de Buenos Aires:</h4>
-                    <p><strong>Palabra secreta:</strong> "MATE" <span class="vegan-emoji">🌿</span></p>
-                    <p><strong>Jugador 1 (sabe la palabra):</strong> "YERBA"<br>
-                    <strong>Jugador 2:</strong> "VERDE"<br>
-                    <strong>Jugador 3:</strong> "PLANTA"<br>
-                    <strong>Jugador 4:</strong> "NATURALEZA"<br>
-                    <strong>Jugador 2:</strong> "¡MATE!"<br>
-                    <strong>Jugador 1:</strong> "¡Correcto! Ganaste un punto"</p>
-                </div>
-
-                <h3>🎯 Reglas importantes:</h3>
-                <ul>
-                    <li>Las asociaciones deben ser lógicas y comprensibles para los demás</li>
-                    <li>No se pueden usar palabras que sean directamente la respuesta</li>
-                    <li>Si una asociación no es entendida, el jugador puede explicar brevemente</li>
-                    <li>Se puede adivinar en cualquier momento del turno de otro jugador</li>
-                </ul>
-
-                <h3>💡 Estrategias porteñas:</h3>
-                <ul>
-                    <li>Usar asociaciones culturales argentinas (fútbol, tango, comida vegana)</li>
-                    <li>Pensar en modismos y expresiones típicas de Buenos Aires</li>
-                    <li>Observar el contexto y las asociaciones anteriores</li>
-                    <li>Ser creativo pero no demasiado abstracto</li>
-                </ul>
-
-                <h3>🚀 Variantes populares:</h3>
-                <ul>
-                    <li><strong>Con categorías:</strong> Solo palabras relacionadas con Argentina, solo comidas veganas, etc.</li>
-                    <li><strong>Versión rápida:</strong> Máximo 3 asociaciones antes de que alguien deba adivinar</li>
-                    <li><strong>Con mímica:</strong> Hacer gestos en lugar de decir palabras</li>
-                    <li><strong>Por equipos:</strong> Dos equipos compiten por adivinar primero</li>
-                </ul>
-
-                <h3>🇦🇷 Temas clásicos porteños para palabras:</h3>
-                <ul>
-                    <li><strong>Comida vegana:</strong> Empanadas de humita, milanesa de soja, alfajor de almendras</li>
-                    <li><strong>Bebidas:</strong> Mate, café, jugos naturales</li>
-                    <li><strong>Fútbol:</strong> Maradona, Boca-River, la Scaloneta</li>
-                    <li><strong>Lugares:</strong> Obelisco, Caminito, Puerto Madero</li>
-                    <li><strong>Cultura:</strong> Tango, fileteado, Gardel</li>
-                    <li><strong>Naturaleza:</strong> Parques, plazas, río</li>
-                </ul>
-
-                <h3>🌟 Curiosidad:</h3>
-                <p>Este juego es muy popular en reuniones familiares y entre amigos en Buenos Aires porque permite conocer cómo piensan los demás y suele generar conversaciones interesantes sobre asociaciones culturales compartidas.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
-            </div>
-        </div>
-        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
-    </footer>
-</body>
-</html>            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            color: var(--color-coral);
-            font-weight: bold;
-        }
-        .association-example {
-            background: #f9f0ff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #b37feb;
-        }
-        .argentina-flag {
-            color: #74acdf;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="logo">
-            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
-        </div>
-    </header>
-
-    <main class="container">
-        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
-        
-        <div class="game-detail">
-            <div class="game-header">
-                <h1>La Palabra Asociada <span class="argentina-flag">🇦🇷</span></h1>
-                <div class="game-meta">
-                    <span class="meta-item">3+ jugadores</span>
-                    <span class="meta-item">10-20 minutos</span>
-                    <span class="meta-item">Rompehielo • Citas</span>
-                </div>
-            </div>
-
-            <div class="instructions">
-                <h2>💭 Cómo Jugar</h2>
-                <p><strong>Materiales necesarios:</strong> Ninguno</p>
-                
-                <h3>Instrucciones:</h3>
-                <ol>
-                    <li>Un jugador piensa en una palabra secreta (ej: "PLAYA").</li>
-                    <li>Dice en voz alta una palabra que asocie con su palabra secreta (ej: "ARENA").</li>
-                    <li>Los demás jugadores, por turnos, dicen palabras que asocien con la palabra anterior.</li>
-                    <li>Cuando un jugador cree saber la palabra secreta, puede intentar adivinarla.</li>
-                    <li>Si acierta, gana un punto y piensa la siguiente palabra. Si no, queda eliminado de esa ronda.</li>
-                    <li>El juego continúa hasta que alguien acierte la palabra secreta.</li>
-                </ol>
-
-                <div class="association-example">
-                    <h4>📝 Ejemplo típico de Buenos Aires:</h4>
-                    <p><strong>Palabra secreta:</strong> "ASADO"</p>
-                    <p><strong>Jugador 1 (sabe la palabra):</strong> "CARNE"<br>
-                    <strong>Jugador 2:</strong> "ROJA"<br>
-                    <strong>Jugador 3:</strong> "SANGRE"<br>
-                    <strong>Jugador 4:</strong> "VAMPIRO"<br>
-                    <strong>Jugador 2:</strong> "¡ASADO!"<br>
-                    <strong>Jugador 1:</strong> "¡Correcto! Ganaste un punto"</p>
-                </div>
-
-                <h3>🎯 Reglas importantes:</h3>
-                <ul>
-                    <li>Las asociaciones deben ser lógicas y comprensibles para los demás</li>
-                    <li>No se pueden usar palabras que sean directamente la respuesta</li>
-                    <li>Si una asociación no es entendida, el jugador puede explicar brevemente</li>
-                    <li>Se puede adivinar en cualquier momento del turno de otro jugador</li>
-                </ul>
-
-                <h3>💡 Estrategias porteñas:</h3>
-                <ul>
-                    <li>Usar asociaciones culturales argentinas (fútbol, tango, comida)</li>
-                    <li>Pensar en modismos y expresiones típicas de Buenos Aires</li>
-                    <li>Observar el contexto y las asociaciones anteriores</li>
-                    <li>Ser creativo pero no demasiado abstracto</li>
-                </ul>
-
-                <h3>🚀 Variantes populares:</h3>
-                <ul>
-                    <li><strong>Con categorías:</strong> Solo palabras relacionadas con Argentina, solo comidas, etc.</li>
-                    <li><strong>Versión rápida:</strong> Máximo 3 asociaciones antes de que alguien deba adivinar</li>
-                    <li><strong>Con mímica:</strong> Hacer gestos en lugar de decir palabras</li>
-                    <li><strong>Por equipos:</strong> Dos equipos compiten por adivinar primero</li>
-                </ul>
-
-                <h3>🇦🇷 Temas clásicos porteños para palabras:</h3>
-                <ul>
-                    <li><strong>Comida:</strong> Asado, empanadas, medialunas, dulce de leche</li>
-                    <li><strong>Fútbol:</strong> Maradona, Boca-River, la Scaloneta</li>
-                    <li><strong>Lugares:</strong> Obelisco, Caminito, Puerto Madero</li>
-                    <li><strong>Cultura:</strong> Tango, mate, fileteado, Gardel</li>
-                    <li><strong>Transporte:</strong> Colectivo, subte, tren Roca</li>
-                </ul>
-
-                <h3>🌟 Curiosidad:</h3>
-                <p>Este juego es muy popular en reuniones familiares y entre amigos en Buenos Aires porque permite conocer cómo piensan los demás y suele generar conversaciones interesantes sobre asociaciones culturales compartidas.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
-            </div>
-        </div>
-        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
-    </footer>
-</body>
-</html>            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            color: var(--color-coral);
-            font-weight: bold;
-        }
-        .association-example {
-            background: #f9f0ff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #b37feb;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -313,11 +24,147 @@
                 <h1>La Palabra Asociada</h1>
                 <div class="game-meta">
                     <span class="meta-item">3+ jugadores</span>
-                    <span class="meta-item">10-20 minutos</span>
-                    <span class="meta-item">Rompehielo • Citas</span>
+                    <span class="meta-item">10-30 minutos</span>
+                    <span class="meta-item">Rompehielo • Juntadas</span>
                 </div>
             </div>
 
             <div class="instructions">
-                <h2>💭 Cómo Jugar</h2>
+                <h2>💭 Cómo Jugar - Versión Clásica</h2>
                 <p><strong>Materiales necesarios:</strong> Ninguno</p>
+                
+                <h3>Instrucciones básicas:</h3>
+                <ol>
+                    <li>Un jugador piensa en una palabra secreta (ej: "MATE").</li>
+                    <li>Dice en voz alta una palabra que asocie con su palabra secreta (ej: "YERBA").</li>
+                    <li>Los demás jugadores, por turnos, dicen palabras que asocien con la palabra anterior.</li>
+                    <li>Cuando un jugador cree saber la palabra secreta, puede intentar adivinarla.</li>
+                    <li>Si acierta, gana un punto y piensa la siguiente palabra.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>📝 Ejemplo clásico:</h4>
+                    <p><strong>Palabra secreta:</strong> "MATE"</p>
+                    <div class="example-line">
+                        <span class="player-name">Jugador 1:</span>
+                        <span class="player-words">"YERBA"</span>
+                    </div>
+                    <div class="example-line">
+                        <span class="player-name">Jugador 2:</span>
+                        <span class="player-words">"VERDE"</span>
+                    </div>
+                    <div class="example-line">
+                        <span class="player-name">Jugador 3:</span>
+                        <span class="player-words">"PLANTA"</span>
+                    </div>
+                    <div class="example-line">
+                        <span class="player-name">Jugador 4:</span>
+                        <span class="player-words">"¡MATE!" → ¡Correcto!</span>
+                    </div>
+                </div>
+
+                <h2>🔄 Variante: Palabra Asociada Reversa</h2>
+                <p><strong>¡Más desafiante y estratégico!</strong></p>
+                
+                <h3>Instrucciones de la reversa:</h3>
+                <ol>
+                    <li>Un jugador piensa una palabra secreta pero <strong>NO la dice</strong>.</li>
+                    <li>En su mente, piensa una palabra que asocie y dice esa palabra en voz alta.</li>
+                    <li>Los demás dicen palabras que asocien, <strong>sin saber la palabra secreta</strong>.</li>
+                    <li>El primer jugador debe poder conectar mentalmente cada palabra dicha con su palabra secreta.</li>
+                    <li>Si no puede encontrar conexión, el jugador que dijo la palabra queda eliminado.</li>
+                    <li>Gana quien adivine la palabra secreta o sea el último en pie.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>📝 Ejemplo reversa:</h4>
+                    <p><strong>Palabra secreta:</strong> "MATE" | <strong>Palabra dicha:</strong> "YERBA"</p>
+                    <div class="example-line">
+                        <span class="player-name">Jugador 2:</span>
+                        <span class="player-words">"VERDE"</span>
+                        <span class="association-check check-ok">✅</span>
+                    </div>
+                    <div class="example-line">
+                        <span class="player-name">Jugador 3:</span>
+                        <span class="player-words">"PLANTA"</span>
+                        <span class="association-check check-ok">✅</span>
+                    </div>
+                    <div class="example-line">
+                        <span class="player-name">Jugador 4:</span>
+                        <span class="player-words">"COMPUTADORA"</span>
+                        <span class="association-check check-fail">❌</span>
+                        <small>(¡Eliminado!)</small>
+                    </div>
+                </div>
+
+                <h2>🔄 Variante: Palabra Asociada Simple</h2>
+                <p><strong>Perfecta para principiantes o juegos rápidos</strong></p>
+                
+                <h3>Instrucciones simple:</h3>
+                <ol>
+                    <li>Un jugador dice cualquier palabra (ej: "PLAYA").</li>
+                    <li>El siguiente dice una palabra que asocie (ej: "ARENA").</li>
+                    <li>Continúan asociando palabras en cadena.</li>
+                    <li>Cuando alguien quiera, puede pedir "REVERSA" y el juego cambia de dirección.</li>
+                    <li>El objetivo es recordar la cadena completa y volver a la palabra inicial.</li>
+                    <li>Quien se equivoque en la reversa queda eliminado.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>📝 Ejemplo simple:</h4>
+                    <p><strong>Cadena:</strong> PLAYA → ARENA → CASTILLO → REYES → CORONA → REVERSA!</p>
+                    <p><strong>Ahora hacia atrás:</strong> CORONA → REYES → CASTILLO → ARENA → PLAYA</p>
+                </div>
+
+                <h3>🎯 Consejos para todas las versiones:</h3>
+                <ul>
+                    <li><strong>Para el que sabe la palabra:</strong> Elegir palabras con múltiples asociaciones</li>
+                    <li><strong>Para los adivinadores:</strong> Probar palabras de diferentes categorías</li>
+                    <li><strong>En reversa:</strong> Ser creativo pero no demasiado abstracto</li>
+                    <li><strong>En simple:</strong> Crear asociaciones memorables para la reversa</li>
+                </ul>
+
+                <h3>🚀 Niveles de dificultad:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                    <div style="background: #e6f7ff; padding: 1rem; border-radius: 8px; border-left: 4px solid #69c0ff;">
+                        <h4>🥉 Principiante</h4>
+                        <p><strong>Versión Simple</strong><br>Cadena libre con reversa opcional</p>
+                    </div>
+                    <div style="background: #f6ffed; padding: 1rem; border-radius: 8px; border-left: 4px solid #95de64;">
+                        <h4>🥈 Intermedio</h4>
+                        <p><strong>Versión Clásica</strong><br>Adivinar la palabra secreta</p>
+                    </div>
+                    <div style="background: #fff2e8; padding: 1rem; border-radius: 8px; border-left: 4px solid #ffa940;">
+                        <h4>🥇 Avanzado</h4>
+                        <p><strong>Versión Reversa</strong><br>Doble asociación mental</p>
+                    </div>
+                </div>
+
+                <h3>💡 Ideas de palabras por categorías:</h3>
+                <ul>
+                    <li><strong>Naturaleza:</strong> Bosque, río, montaña, sol</li>
+                    <li><strong>Emociones:</strong> Alegría, miedo, sorpresa, amor</li>
+                    <li><strong>Viajes:</strong> Avión, maleta, mapa, aventura</li>
+                    <li><strong>Comida:</strong> Pizza, chocolate, ensalada, postre</li>
+                </ul>
+
+                <h3>🎭 ¿Cuál elegir?</h3>
+                <ul>
+                    <li><strong>Simple:</strong> Para grupos grandes o con niños</li>
+                    <li><strong>Clásica:</strong> Para romper el hielo en reuniones</li>
+                    <li><strong>Reversa:</strong> Para jugadores experimentados que buscan desafío</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

@@ -1,3 +1,75 @@
+/* --- ESTILOS PARA CATEGORÍAS PRINCIPALES --- */
+.filtros-principales {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.filtro-principal-btn {
+    background: var(--color-blanco);
+    border: 2px solid var(--color-azul-principal);
+    border-radius: 25px;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: var(--color-azul-principal);
+    min-width: 180px;
+    text-align: center;
+}
+
+.filtro-principal-btn:hover {
+    background: var(--color-azul-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.filtro-principal-btn.activo {
+    background: var(--color-azul-principal);
+    color: var(--color-blanco);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Estilos para las subcategorías */
+.subcategorias {
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.categoria-juegos {
+    transition: all 0.3s ease;
+}
+
+/* Mejoras responsive para categorías principales */
+@media (max-width: 768px) {
+    .filtros-principales {
+        gap: 1rem;
+    }
+    
+    .filtro-principal-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filtros-principales {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filtro-principal-btn {
+        width: 100%;
+        max-width: 280px;
+        min-width: auto;
+    }
+}
+
 /* --- VARIABLES Y ESTILOS GLOBALES --- */
 :root {
     --color-azul-principal: #2563eb;
@@ -504,3 +576,4 @@ a {
         gap: 1rem;
     }
 }
+

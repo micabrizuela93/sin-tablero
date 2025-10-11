@@ -1,8 +1,11 @@
 /* --- VARIABLES Y ESTILOS GLOBALES --- */
 :root {
-    --color-coral: #FF6B6B;
-    --color-gris-oscuro: #333333;
-    --color-gris-claro: #f4f4f4;
+    --color-azul-principal: #2563eb;
+    --color-azul-oscuro: #1e40af;
+    --color-azul-claro: #dbeafe;
+    --color-celeste: #3b82f6;
+    --color-gris-oscuro: #334155;
+    --color-gris-claro: #f8fafc;
     --color-blanco: #FFFFFF;
     --fuente-principal: 'Montserrat', sans-serif;
 }
@@ -534,5 +537,6 @@ a {
     .footer-social a { margin: 0 0.8rem; }
 
 }
+
 
 

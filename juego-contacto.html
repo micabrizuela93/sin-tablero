@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-detail {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: left;
+        }
+        .game-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .game-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 2rem;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            background: var(--color-gris-claro);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-coral);
+            font-weight: bold;
+        }
+        .example-box {
+            background: #f0f8ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #4dabf7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Contacto</h1>
+                <div class="game-meta">
+                    <span class="meta-item">3+ jugadores</span>
+                    <span class="meta-item">15-30 minutos</span>
+                    <span class="meta-item">Juntadas • Familia</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🔍 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Ninguno, solo tu vocabulario</p>
+                
+                <h3>Instrucciones:</h3>
+                <ol>
+                    <li>Un jugador (el "director") piensa una palabra secreta.</li>
+                    <li>Los demás jugadores deben adivinarla haciendo preguntas.</li>
+                    <li>Un jugador dice una letra que cree que está en la palabra.</li>
+                    <li>Si la letra está en la palabra, el director dice "Sí" y en qué posición.</li>
+                    <li>Si un jugador cree que puede adivinar la palabra completa, dice "Contacto" y la propone.</li>
+                    <li>Si otro jugador también la pensó, dicen "Contacto" juntos y ganan un punto.</li>
+                    <li>Si aciertan la palabra, ese jugador se convierte en el nuevo director.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>📝 Ejemplo de juego:</h4>
+                    <p><strong>Palabra secreta:</strong> "ELEFANTE"</p>
+                    <p>Jugador 1: "¿Tiene la letra E?"<br>
+                    Director: "Sí, en la primera y tercera posición"<br>
+                    Jugador 2: "¿Tiene la letra L?"<br>
+                    Director: "Sí, en la segunda posición"<br>
+                    Jugador 3: "¡Contacto! ¿Es ELEFANTE?"<br>
+                    Jugador 1: "¡Contacto!"<br>
+                    Director: "¡Sí, es ELEFANTE!"</p>
+                </div>
+
+                <h3>💡 Consejos estratégicos:</h3>
+                <ul>
+                    <li>Empezar con vocales (A, E, I, O, U) suele dar buena información</li>
+                    <li>Prestar atención a las posiciones de las letras</li>
+                    <li>Buscar patrones comunes en español</li>
+                    <li>Para hacer contacto, hacer contacto visual con otros jugadores</li>
+                </ul>
+
+                <h3>🚀 Variantes:</h3>
+                <ul>
+                    <li><strong>Por categorías:</strong> Solo palabras de animales, países, etc.</li>
+                    <li><strong>Con tiempo:</strong> Tiempo límite para adivinar</li>
+                    <li><strong>Versión difícil:</strong> Palabras más complejas o técnicas</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

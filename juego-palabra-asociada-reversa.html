@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palabra Asociada Reversa - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-detail {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: left;
+        }
+        .game-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .game-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 2rem;
+            flex-wrap: wrap;
+        }
+        .meta-item {
+            background: var(--color-gris-claro);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-coral);
+            font-weight: bold;
+        }
+        .reversa-example {
+            background: #fff2e8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #ffa940;
+        }
+        .argentina-flag {
+            color: #74acdf;
+            font-weight: bold;
+        }
+        .vegan-emoji {
+            color: #78b159;
+        }
+        .reversa-highlight {
+            background: #fff566;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Palabra Asociada Reversa <span class="argentina-flag">🇦🇷</span></h1>
+                <div class="game-meta">
+                    <span class="meta-item">4+ jugadores</span>
+                    <span class="meta-item">15-25 minutos</span>
+                    <span class="meta-item">Juntadas • Noche de juegos</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🔄 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Papel y lápiz (opcional para anotar)</p>
+                
+                <h3>Instrucciones:</h3>
+                <ol>
+                    <li>Un jugador piensa en una palabra secreta (ej: "MATE") pero <strong>NO la dice</strong>.</li>
+                    <li>En su mente, piensa una palabra que asocie con su palabra secreta (ej: "YERBA").</li>
+                    <li>Dice esa palabra asociada ("YERBA") en voz alta.</li>
+                    <li>Los demás jugadores, <strong>sin saber la palabra secreta</strong>, dicen palabras que asocien con "YERBA".</li>
+                    <li>El primer jugador anota mentalmente todas las palabras que dicen los demás.</li>
+                    <li>Cuando un jugador dice una palabra que el primero <strong>NO puede asociar con su palabra secreta</strong>, ese jugador queda eliminado.</li>
+                    <li>El juego termina cuando solo queda un jugador, o cuando alguien adivina la palabra secreta.</li>
+                </ol>
+
+                <div class="reversa-example">
+                    <h4>📝 Ejemplo completo:</h4>
+                    <p><strong>Palabra secreta del Jugador 1:</strong> "MATE" <span class="vegan-emoji">🌿</span></p>
+                    <p><strong>Jugador 1 (piensa "YERBA"→"MATE"):</strong> "YERBA"<br>
+                    <strong>Jugador 2:</strong> "VERDE" ✅ (YERBA→VERDE→MATE)<br>
+                    <strong>Jugador 3:</strong> "PLANTA" ✅ (YERBA→PLANTA→MATE)<br>
+                    <strong>Jugador 4:</strong> "INFUSIÓN" ✅ (YERBA→INFUSIÓN→MATE)<br>
+                    <strong>Jugador 2:</strong> "AMARGO" ✅ (YERBA→AMARGO→MATE)<br>
+                    <strong>Jugador 3:</strong> "COMPUTADORA" ❌ (YERBA→COMPUTADORA→❌MATE)<br>
+                    <strong>Jugador 1:</strong> "¡No puedo asociar! Jugador 3 eliminado"<br>
+                    <strong>Jugador 4:</strong> "¡MATE!"<br>
+                    <strong>Jugador 1:</strong> "¡Correcto! Ganaste"</p>
+                </div>
+
+                <h3>🎯 Reglas clave de la reversa:</h3>
+                <ul>
+                    <li>El jugador que sabe la palabra secreta <strong>debe poder conectar mentalmente</strong> cada palabra dicha con su palabra secreta</li>
+                    <li>Si no puede encontrar una conexión lógica, el jugador que dijo la palabra queda eliminado</li>
+                    <li>Las asociaciones pueden ser creativas, pero deben tener cierta lógica</li>
+                    <li>Se puede adivinar la palabra secreta en cualquier momento</li>
+                    <li>Si alguien adivina correctamente, gana y piensa la siguiente palabra</li>
+                </ul>
+
+                <h3>💡 Estrategias para el que sabe la palabra:</h3>
+                <ul>
+                    <li>Elegir palabras secretas con muchas posibles asociaciones</li>
+                    <li>Ser flexible en las conexiones mentales</li>
+                    <li>No eliminar demasiado rápido - dar chance a la creatividad</li>
+                    <li>Pensar en asociaciones culturales argentinas que todos conozcan</li>
+                </ul>
+
+                <h3>💡 Estrategias para los adivinadores:</h3>
+                <ul>
+                    <li>Decir palabras que tengan múltiples significados o asociaciones</li>
+                    <li>Observar qué tipo de palabras no elimina el jugador principal</li>
+                    <li>Probar palabras de diferentes categorías (objetos, emociones, acciones)</li>
+                    <li>Usar el contexto de las palabras anteriores que sí funcionaron</li>
+                </ul>
+
+                <h3>🚀 Variantes de la reversa:</h3>
+                <ul>
+                    <li><strong>Con tiempo:</strong> 10 segundos para encontrar la asociación</li>
+                    <li><strong>Por equipos:</strong> Un equipo piensa la palabra, el otro adivina</li>
+                    <li><strong>Versión extrema:</strong> Solo se permiten 3 palabras por jugador antes de adivinar</li>
+                    <li><strong>Con temas:</strong> Solo palabras relacionadas con naturaleza, música, etc.</li>
+                </ul>
+
+                <h3>🌱 Ejemplos veganos para practicar:</h3>
+                <ul>
+                    <li><strong>Palabra secreta:</strong> "HUERTA"<br>Asociación inicial: "TOMATE"<br>Palabras que funcionan: ROJO, ENSALADA, SEMILLA<br>Palabras que no: CARRETERA, COMPUTADORA</li>
+                    
+                    <li><strong>Palabra secreta:</strong> "BICICLETA"<br>Asociación inicial: "RUEDAS"<br>Palabras que funcionan: AIRE, TRANSPORTE, EJERCICIO<br>Palabras que no: HELADERA, TELEVISIÓN</li>
+                </ul>
+
+                <h3>🎭 ¿Por qué es más desafiante?</h3>
+                <p>La reversa agrega una capa extra de dificultad porque el jugador principal debe mantener en mente <strong>dos conexiones simultáneas</strong>: de su palabra asociada a la palabra dicha, y de esa palabra a su palabra secreta. ¡Es un excelente ejercicio de pensamiento lateral!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

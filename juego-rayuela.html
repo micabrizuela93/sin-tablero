@@ -8,6 +8,113 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .rayuela-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .rayuela-diagrama {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+        
+        .rayuela-casillero {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .rayuela-casillero:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,1);
+        }
+        
+        .casillero-especial {
+            background: linear-gradient(135deg, #FFD166, #FF9E6D);
+            color: #2D3047;
+            font-weight: 800;
+        }
+        
+        .casillero-doble {
+            grid-column: span 2;
+            aspect-ratio: 2/1;
+        }
+        
+        .numero-casillero {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #8B5FBF;
+        }
+        
+        .leyenda-rayuela {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .leyenda-item {
+            text-align: center;
+        }
+        
+        .leyenda-icono {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .recorrido-rayuela {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .flecha {
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .piedra-indicador {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FF6B35;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -35,7 +142,7 @@
                 
                 <h3>Instrucciones clásicas:</h3>
                 <ol>
-                    <li>Dibujar en el suelo con tiza el diagrama de la rayuela (8 casilleros numerados).</li>
+                    <li>Dibujar en el suelo con tiza el diagrama de la rayuela con 8 casilleros numerados.</li>
                     <li>El primer jugador tira la piedra al casillero 1.</li>
                     <li>Salta en un pie por los casilleros, evitando el que tiene la piedra.</li>
                     <li>En los casilleros dobles (4-5 y 7-8) puede poner los dos pies.</li>
@@ -45,35 +152,86 @@
                     <li>Gana quien complete primero todos los casilleros del 1 al 8.</li>
                 </ol>
 
-                                <div class="example-box">
-                    <h4>📐 Diagrama de rayuela:</h4>
+                <div class="rayuela-container">
+                    <h3 style="text-align: center; color: white; margin-bottom: 1.5rem;">📐 Diagrama de Rayuela</h3>
+                    
                     <div class="rayuela-diagrama">
-                        <div class="rayuela-fila rayuela-cielo">
-                            <div class="rayuela-casillero">🌟<br>CIELO</div>
+                        <!-- Fila 1 - Cielo -->
+                        <div class="rayuela-casillero casillero-especial" style="grid-column: 2;">
+                            <div style="text-align: center;">
+                                <div>🌟</div>
+                                <div style="font-size: 0.8rem;">CIELO</div>
+                            </div>
                         </div>
-                        <div class="rayuela-fila">
-                            <div class="rayuela-casillero">8</div>
-                            <div class="rayuela-casillero">7</div>
+                        
+                        <!-- Fila 2 -->
+                        <div class="rayuela-casillero">
+                            <span class="numero-casillero">8</span>
                         </div>
-                        <div class="rayuela-fila">
-                            <div class="rayuela-casillero">6</div>
-                            <div class="rayuela-casillero">5</div>
+                        <div class="rayuela-casillero" style="background: rgba(255,255,255,0.8);">
+                            <span class="numero-casillero">7</span>
                         </div>
-                        <div class="rayuela-fila">
-                            <div class="rayuela-casillero">4</div>
-                            <div class="rayuela-casillero">3</div>
+                        
+                        <!-- Fila 3 -->
+                        <div class="rayuela-casillero" style="background: rgba(255,255,255,0.8);">
+                            <span class="numero-casillero">6</span>
                         </div>
-                        <div class="rayuela-fila">
-                            <div class="rayuela-casillero">2</div>
-                            <div class="rayuela-casillero">1</div>
+                        <div class="rayuela-casillero">
+                            <span class="numero-casillero">5</span>
                         </div>
-                        <div class="rayuela-fila rayuela-tierra">
-                            <div class="rayuela-casillero">🏠<br>TIERRA</div>
+                        
+                        <!-- Fila 4 -->
+                        <div class="rayuela-casillero">
+                            <span class="numero-casillero">4</span>
+                        </div>
+                        <div class="rayuela-casillero" style="background: rgba(255,255,255,0.8);">
+                            <span class="numero-casillero">3</span>
+                        </div>
+                        
+                        <!-- Fila 5 -->
+                        <div class="rayuela-casillero" style="background: rgba(255,255,255,0.8);">
+                            <span class="numero-casillero">2</span>
+                        </div>
+                        <div class="rayuela-casillero">
+                            <span class="numero-casillero">1</span>
+                        </div>
+                        
+                        <!-- Fila 6 - Tierra -->
+                        <div class="rayuela-casillero casillero-especial" style="grid-column: 2;">
+                            <div style="text-align: center;">
+                                <div>🏠</div>
+                                <div style="font-size: 0.8rem;">TIERRA</div>
+                            </div>
                         </div>
                     </div>
-                    <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                        ⬆️ Salta hacia arriba ⬇️ Regresa recogiendo la piedra
-                    </p>
+                    
+                    <div class="recorrido-rayuela">
+                        <div style="text-align: center;">
+                            <div class="leyenda-icono">👆</div>
+                            <div>Ida</div>
+                        </div>
+                        <div class="flecha">⬆️</div>
+                        <div style="text-align: center;">
+                            <div class="leyenda-icono">👇</div>
+                            <div>Vuelta</div>
+                        </div>
+                        <div class="flecha">⬇️</div>
+                    </div>
+                    
+                    <div class="leyenda-rayuela">
+                        <div class="leyenda-item">
+                            <div class="leyenda-icono">🎯</div>
+                            <div>Tira la piedra</div>
+                        </div>
+                        <div class="leyenda-item">
+                            <div class="leyenda-icono">🦶</div>
+                            <div>Salta en 1 pie</div>
+                        </div>
+                        <div class="leyenda-item">
+                            <div class="leyenda-icono">👣</div>
+                            <div>2 pies</div>
+                        </div>
+                    </div>
                 </div>
 
                 <h3>🎯 Reglas importantes:</h3>
@@ -110,5 +268,64 @@
                     <li>Jugar en horas con buena luz natural</li>
                     <li>Llevar agua para hidratarse</li>
                 </ul>
+            </div>
+        </div>
+    </main>
 
-                <h3>🎭
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link" data-red="instagram">Instagram</a>
+                <a href="#" class="social-link" data-red="twitter">Twitter</a>
+                <a href="#" class="social-link" data-red="contacto">Contacto</a>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero. Creado con ❤️ en Argentina.</p>
+    </footer>
+
+    <!-- Modal para redes sociales -->
+    <div id="socialModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 2rem; border-radius: 20px; text-align: center; max-width: 300px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🎮</div>
+            <h3 style="color: var(--color-primario); margin-bottom: 1rem;">¡Próximamente!</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--color-oscuro);">Estamos trabajando en nuestras redes sociales. ¡Volvé pronto!</p>
+            <button onclick="cerrarModal()" class="btn-principal" style="background: var(--color-primario); color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer;">
+                ¡Entendido!
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar el modal
+        function mostrarModal() {
+            document.getElementById('socialModal').style.display = 'flex';
+        }
+        
+        // Función para cerrar el modal
+        function cerrarModal() {
+            document.getElementById('socialModal').style.display = 'none';
+        }
+        
+        // Agregar event listeners a los links de redes sociales
+        document.addEventListener('DOMContentLoaded', function() {
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mostrarModal();
+                });
+            });
+            
+            // Cerrar modal al hacer clic fuera del contenido
+            document.getElementById('socialModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    cerrarModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

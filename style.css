@@ -574,15 +574,24 @@ a {
     }
 }
 
-/* FORMULARIO RESPONSIVE */
+/* FORMULARIO RESPONSIVE - CORREGIDO */
+#sugerir {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .sugerir-form {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    box-sizing: border-box;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 .form-group input,
@@ -605,11 +614,14 @@ a {
     border-color: var(--color-coral);
 }
 
-/* Grupo de inputs en fila para móviles */
+/* Grupo de inputs en fila */
 .form-group.row {
     display: flex;
     gap: 1rem;
-    flex-direction: column;
+}
+
+.form-group.row input {
+    flex: 1;
 }
 
 /* Checkbox */
@@ -634,59 +646,36 @@ a {
     margin-top: 0.25rem;
 }
 
+/* Botón centrado */
+.sugerir-form .btn-principal {
+    width: 100%;
+    display: block;
+}
+
 /* Mensajes del formulario */
 .form-message {
+    width: 100%;
     padding: 1rem;
     border-radius: 8px;
     margin-top: 1rem;
     text-align: center;
+    box-sizing: border-box;
 }
 
-.form-message.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.form-message.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-/* Loading spinner */
-.loading-spinner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ffffff;
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Tablet */
-@media (min-width: 768px) {
+/* Para móviles */
+@media (max-width: 768px) {
     .sugerir-form {
-        padding: 0;
+        padding: 0 1rem;
     }
     
     .form-group.row {
-        flex-direction: row;
-    }
-    
-    .form-group.row input {
-        flex: 1;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
+/* Para pantallas grandes */
+@media (min-width: 1200px) {
     .sugerir-form {
         max-width: 700px;
     }

@@ -1,85 +1,18 @@
-/* --- ESTILOS PARA CATEGORÍAS PRINCIPALES --- */
-.filtros-principales {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-}
-
-.filtro-principal-btn {
-    background: var(--color-blanco);
-    border: 2px solid var(--color-azul-principal);
-    border-radius: 25px;
-    padding: 15px 25px;
-    cursor: pointer;
-    font-family: var(--fuente-principal);
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    color: var(--color-azul-principal);
-    min-width: 180px;
-    text-align: center;
-}
-
-.filtro-principal-btn:hover {
-    background: var(--color-azul-claro);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-}
-
-.filtro-principal-btn.activo {
-    background: var(--color-azul-principal);
-    color: var(--color-blanco);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-/* Estilos para las subcategorías */
-.subcategorias {
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
-}
-
-.categoria-juegos {
-    transition: all 0.3s ease;
-}
-
-/* Mejoras responsive para categorías principales */
-@media (max-width: 768px) {
-    .filtros-principales {
-        gap: 1rem;
-    }
-    
-    .filtro-principal-btn {
-        padding: 12px 20px;
-        font-size: 1rem;
-        min-width: 160px;
-    }
-}
-
-@media (max-width: 480px) {
-    .filtros-principales {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .filtro-principal-btn {
-        width: 100%;
-        max-width: 280px;
-        min-width: auto;
-    }
-}
-
 /* --- VARIABLES Y ESTILOS GLOBALES --- */
 :root {
-    --color-azul-principal: #2563eb;
-    --color-azul-oscuro: #1e40af;
-    --color-azul-claro: #dbeafe;
-    --color-celeste: #3b82f6;
-    --color-gris-oscuro: #334155;
-    --color-gris-claro: #f8fafc;
+    --color-primario: #8B5FBF;    /* Violeta vibrante */
+    --color-secundario: #FF6B35;  /* Naranja coral */
+    --color-terciario: #FFD166;   /* Amarillo sol */
+    --color-accento: #06D6A0;     /* Verde menta */
+    --color-oscuro: #2D3047;      /* Azul oscuro elegante */
+    --color-claro: #F8F9FA;       /* Gris muy claro */
     --color-blanco: #FFFFFF;
     --fuente-principal: 'Montserrat', sans-serif;
+    
+    /* Gradientes */
+    --gradiente-hero: linear-gradient(135deg, #8B5FBF 0%, #FF6B35 100%);
+    --gradiente-boton: linear-gradient(135deg, #FF6B35 0%, #FFD166 100%);
+    --gradiente-categoria: linear-gradient(135deg, #8B5FBF 0%, #06D6A0 100%);
 }
 
 * {
@@ -90,13 +23,13 @@
 
 body {
     font-family: var(--fuente-principal);
-    color: var(--color-gris-oscuro);
+    color: var(--color-oscuro);
     line-height: 1.6;
     background-color: var(--color-blanco);
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 4rem auto;
     padding: 0 2rem;
     text-align: center;
@@ -107,141 +40,293 @@ h1, h2, h3 {
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2.2rem; color: var(--color-azul-principal); }
-h3 { font-size: 1.4rem; }
+h1 { 
+    font-size: 3rem; 
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+h2 { 
+    font-size: 2.5rem; 
+    color: var(--color-primario);
+}
+h3 { font-size: 1.5rem; }
 
 a {
     text-decoration: none;
-    color: var(--color-azul-principal);
+    color: var(--color-primario);
+    transition: all 0.3s ease;
 }
 
 /* --- BOTONES --- */
 .btn-principal {
     display: inline-block;
-    background-color: var(--color-azul-principal);
-    color: var(--color-blanco);
-    padding: 12px 30px;
-    border-radius: 30px;
+    background: var(--gradiente-boton);
+    color: var(--color-oscuro);
+    padding: 15px 35px;
+    border-radius: 50px;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .btn-principal:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-    background-color: var(--color-azul-oscuro);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, #FF8E53 0%, #FFE082 100%);
 }
 
 /* --- HEADER Y LOGO --- */
 .header {
     padding: 1.5rem 2rem;
     background-color: var(--color-blanco);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 20px rgba(139, 95, 191, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: var(--color-gris-oscuro);
+    color: var(--color-primario);
 }
 
 /* --- SECCIÓN INICIO (HERO) --- */
 .hero {
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 0 2rem;
-    background: linear-gradient(135deg, var(--color-azul-claro) 0%, var(--color-blanco) 100%);
-}
-.hero h1 {
-    max-width: 700px;
-}
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
-}
-.hero .btn-principal {
-    background: linear-gradient(135deg, var(--color-azul-principal), var(--color-celeste));
-}
-.hero .btn-principal:hover {
-    background: linear-gradient(135deg, var(--color-azul-oscuro), var(--color-azul-principal));
+    background: var(--gradiente-hero);
+    color: var(--color-blanco);
+    position: relative;
+    overflow: hidden;
 }
 
-/* --- BIBLIOTECA Y FILTROS --- */
-.filtros {
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="80" r="0.7" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: none;
+    -webkit-text-fill-color: var(--color-blanco);
+    color: var(--color-blanco);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
     margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.hero .btn-principal {
+    background: var(--color-blanco);
+    color: var(--color-primario);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.hero .btn-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* --- CATEGORÍAS PRINCIPALES --- */
+.filtros-principales {
     display: flex;
     justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
     flex-wrap: wrap;
-    gap: 10px;
-}
-.filtro-btn {
-    background: none;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 8px 20px;
-    cursor: pointer;
-    font-family: var(--fuente-principal);
-    transition: all 0.2s ease;
-}
-.filtro-btn:hover {
-    background-color: var(--color-azul-claro);
-    border-color: var(--color-azul-principal);
-}
-.filtro-btn.activo {
-    background-color: var(--color-azul-principal);
-    color: var(--color-blanco);
-    border-color: var(--color-azul-principal);
 }
 
+.filtro-principal-btn {
+    background: var(--color-blanco);
+    border: 3px solid var(--color-primario);
+    border-radius: 25px;
+    padding: 18px 30px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    color: var(--color-primario);
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.filtro-principal-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradiente-categoria);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.filtro-principal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 95, 191, 0.3);
+    color: var(--color-blanco);
+}
+
+.filtro-principal-btn:hover::before {
+    left: 0;
+}
+
+.filtro-principal-btn.activo {
+    background: var(--gradiente-categoria);
+    color: var(--color-blanco);
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(139, 95, 191, 0.4);
+}
+
+/* Botón VER TODO especial */
+.filtro-principal-btn[data-categoria-principal="todos"] {
+    border-color: var(--color-secundario);
+    color: var(--color-secundario);
+}
+
+.filtro-principal-btn[data-categoria-principal="todos"]::before {
+    background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
+}
+
+.filtro-principal-btn[data-categoria-principal="todos"]:hover,
+.filtro-principal-btn[data-categoria-principal="todos"].activo {
+    background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
+    color: var(--color-oscuro);
+}
+
+/* Estilos para las subcategorías */
+.subcategorias {
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    background: var(--color-claro);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: var(--color-oscuro);
+}
+
+.filtro-btn:hover {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+.filtro-btn.activo {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    box-shadow: 0 4px 15px rgba(139, 95, 191, 0.3);
+}
+
+/* --- GRILLA DE JUEGOS --- */
 .juegos-grilla {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
+
 .game-card {
     background: var(--color-blanco);
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 1.5rem;
+    border-radius: 20px;
+    padding: 2rem;
     text-align: left;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 30px rgba(139, 95, 191, 0.1);
+    transition: all 0.3s ease;
     cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
 }
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradiente-categoria);
+}
+
 .game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.15);
-    border-color: var(--color-azul-claro);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(139, 95, 191, 0.2);
+    border-color: var(--color-primario);
 }
+
+.game-card h3 {
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
 .game-card p {
-    color: #64748b;
+    color: var(--color-oscuro);
     margin-bottom: 1rem;
+    opacity: 0.8;
 }
+
 .game-card .category {
-    background-color: var(--color-azul-claro);
-    color: var(--color-azul-oscuro);
-    padding: 4px 10px;
+    background: var(--color-terciario);
+    color: var(--color-oscuro);
+    padding: 6px 15px;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: bold;
+    display: inline-block;
 }
-.game-card.hidden {
-    display: none;
+
+.categoria-juegos {
+    transition: all 0.3s ease;
 }
 
 /* --- FORMULARIO DE SUGERENCIAS --- */
 #sugerir { 
-    background-color: var(--color-gris-claro); 
-    padding-top: 4rem; 
-    padding-bottom: 4rem; 
-    margin-bottom: 0;
+    background: linear-gradient(135deg, var(--color-claro) 0%, var(--color-blanco) 100%);
+    padding: 5rem 2rem;
+    margin: 4rem -2rem;
+    border-radius: 30px;
 }
+
 .sugerir-form {
     max-width: 600px;
     margin: 2rem auto 0;
@@ -269,9 +354,9 @@ a {
 .sugerir-form select,
 .sugerir-form textarea {
     width: 100%;
-    padding: 12px 15px;
-    border-radius: 8px;
-    border: 2px solid #e2e8f0;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 2px solid var(--color-claro);
     font-family: var(--fuente-principal);
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -282,15 +367,16 @@ a {
 .sugerir-form select:focus,
 .sugerir-form textarea:focus {
     outline: none;
-    border-color: var(--color-azul-principal);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.1);
 }
 
 .char-counter {
     text-align: right;
     font-size: 0.8rem;
-    color: #666;
+    color: var(--color-oscuro);
     margin-top: 0.25rem;
+    opacity: 0.7;
 }
 
 .checkbox-label {
@@ -305,122 +391,94 @@ a {
     margin-top: 0.2rem;
 }
 
-/* Botón de enviar con loader */
-#submitBtn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.loading-spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid transparent;
-    border-top: 2px solid white;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Mensajes del formulario */
-.form-message {
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-weight: 500;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.form-message.success {
-    background-color: #dcfce7;
-    color: #166534;
-    border: 1px solid #bbf7d0;
-}
-
-.form-message.error {
-    background-color: #fee2e2;
-    color: #991b1b;
-    border: 1px solid #fecaca;
-}
-
 /* --- FOOTER --- */
 .footer {
-    background-color: var(--color-gris-oscuro);
+    background: var(--color-oscuro);
     color: var(--color-blanco);
-    padding: 3rem 2rem 1.5rem;
+    padding: 4rem 2rem 2rem;
     text-align: center;
+    margin-top: 4rem;
 }
+
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
 }
-.footer-about { flex: 2; text-align: left; min-width: 250px;}
-.footer-social { flex: 1; text-align: right; min-width: 200px;}
+
+.footer-about { 
+    flex: 2; 
+    text-align: left; 
+    min-width: 300px;
+}
+.footer-social { 
+    flex: 1; 
+    text-align: right; 
+    min-width: 250px;
+}
+
 .footer-social a {
     color: var(--color-blanco);
-    margin-left: 1.5rem;
-    transition: color 0.2s ease;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
+
 .footer-social a:hover {
-    color: var(--color-azul-claro);
+    color: var(--color-terciario);
+    transform: translateY(-2px);
 }
+
 .footer-copy {
     font-size: 0.9rem;
-    color: #cbd5e1;
-    border-top: 1px solid #475569;
-    padding-top: 1.5rem;
-    max-width: 1100px;
+    color: rgba(255,255,255,0.7);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- ESTILOS UNIFICADOS PARA PÁGINAS DE JUEGO --- */
+/* --- ESTILOS PARA PÁGINAS DE JUEGO --- */
 .game-detail {
-    max-width: 800px;
-    margin: 2rem auto;
+    max-width: 900px;
+    margin: 3rem auto;
     padding: 0 2rem;
     text-align: left;
 }
 
 .game-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .game-meta {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin: 1rem 0 2rem;
+    margin: 1.5rem 0 2rem;
     flex-wrap: wrap;
 }
 
 .meta-item {
-    background: var(--color-azul-claro);
-    color: var(--color-azul-oscuro);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    background: var(--gradiente-categoria);
+    color: var(--color-blanco);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .instructions {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
+    background: var(--color-blanco);
+    padding: 3rem;
+    border-radius: 25px;
     margin: 2rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 40px rgba(139, 95, 191, 0.1);
+    border: 2px solid var(--color-claro);
 }
 
 .back-btn {
@@ -428,58 +486,47 @@ a {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
-    color: var(--color-azul-principal);
+    color: var(--color-primario);
     font-weight: bold;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: var(--color-claro);
 }
+
 .back-btn:hover {
-    color: var(--color-azul-oscuro);
+    color: var(--color-secundario);
+    transform: translateX(-5px);
 }
 
-/* Estilos para ejemplos en todas las páginas */
 .example-box {
-    background: var(--color-azul-claro);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 1.5rem 0;
-    border-left: 4px solid var(--color-celeste);
+    background: linear-gradient(135deg, #F0E6FF 0%, #E6F7FF 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    border-left: 5px solid var(--color-primario);
 }
-
-.example-line {
-    margin-bottom: 0.5rem;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid #bfdbfe;
-}
-
-.example-line:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-.player-name {
-    font-weight: bold;
-    color: var(--color-azul-oscuro);
-    display: inline-block;
-    min-width: 100px;
-}
-
-.player-words {
-    display: inline-block;
-}
-
-.association-check {
-    margin-left: 0.5rem;
-    font-weight: bold;
-}
-
-.check-ok { color: #16a34a; }
-.check-fail { color: #dc2626; }
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    .hero { min-height: 50vh; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .hero h1 { font-size: 2.8rem; }
+    
+    .filtros-principales {
+        gap: 0.8rem;
+    }
+    
+    .filtro-principal-btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+    
+    .juegos-grilla {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
     
     .footer-container { 
         flex-direction: column; 
@@ -489,91 +536,36 @@ a {
         text-align: center; 
     }
     .footer-social a { 
-        margin: 0 0.8rem; 
-    }
-    
-    /* Responsive para páginas de juego */
-    .game-detail {
-        padding: 0 1rem;
-    }
-    
-    .instructions {
-        padding: 1.5rem;
-    }
-    
-    .example-box {
-        padding: 1rem;
-    }
-    
-    .example-line {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-        padding: 0.5rem 0;
-    }
-    
-    .player-name {
-        min-width: auto;
-        font-size: 0.9rem;
-    }
-    
-    .player-words {
-        font-size: 0.95rem;
-        padding-left: 0.5rem;
-    }
-    
-    .game-meta {
-        gap: 1rem;
-    }
-    
-    .meta-item {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.85rem;
-    }
-    
-    .form-group.row {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .sugerir-form {
-        gap: 1rem;
+        margin: 0 1rem; 
     }
 }
 
 @media (max-width: 480px) {
-    .instructions {
-        padding: 1rem;
-    }
-    
-    .example-box {
-        padding: 0.8rem;
-    }
-    
-    .player-name {
-        font-size: 0.85rem;
-    }
-    
-    .player-words {
-        font-size: 0.9rem;
-        padding-left: 0;
-    }
-    
-    .example-line {
-        gap: 0.1rem;
-    }
-    
-    .game-header h1 {
-        font-size: 1.8rem;
-    }
-    
     .container {
         padding: 0 1rem;
     }
     
-    .juegos-grilla {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    .filtros-principales {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filtro-principal-btn {
+        width: 100%;
+        max-width: 280px;
+        min-width: auto;
+    }
+    
+    .hero {
+        min-height: 60vh;
+        padding: 0 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .instructions {
+        padding: 2rem 1.5rem;
     }
 }
-

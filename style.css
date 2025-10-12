@@ -1,18 +1,13 @@
 /* --- VARIABLES Y ESTILOS GLOBALES --- */
 :root {
-    --color-primario: #8B5FBF;    /* Violeta vibrante */
-    --color-secundario: #FF6B35;  /* Naranja coral */
-    --color-terciario: #FFD166;   /* Amarillo sol */
-    --color-accento: #06D6A0;     /* Verde menta */
+    --color-primario: #5D5FEF;    /* Azul índigo suave */
+    --color-secundario: #FF7B54;  /* Coral suave */
+    --color-terciario: #4ECDC4;   /* Verde agua suave */
+    --color-accento: #FFD166;     /* Amarillo suave */
     --color-oscuro: #2D3047;      /* Azul oscuro elegante */
     --color-claro: #F8F9FA;       /* Gris muy claro */
     --color-blanco: #FFFFFF;
     --fuente-principal: 'Montserrat', sans-serif;
-    
-    /* Gradientes */
-    --gradiente-hero: linear-gradient(135deg, #8B5FBF 0%, #FF6B35 100%);
-    --gradiente-boton: linear-gradient(135deg, #FF6B35 0%, #FFD166 100%);
-    --gradiente-categoria: linear-gradient(135deg, #8B5FBF 0%, #06D6A0 100%);
 }
 
 * {
@@ -42,10 +37,7 @@ h1, h2, h3 {
 
 h1 { 
     font-size: 3rem; 
-    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-primario);
 }
 h2 { 
     font-size: 2.5rem; 
@@ -62,8 +54,8 @@ a {
 /* --- BOTONES --- */
 .btn-principal {
     display: inline-block;
-    background: var(--gradiente-boton);
-    color: var(--color-oscuro);
+    background: var(--color-secundario);
+    color: var(--color-blanco);
     padding: 15px 35px;
     border-radius: 50px;
     font-size: 1.1rem;
@@ -71,20 +63,20 @@ a {
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 123, 84, 0.3);
 }
 
 .btn-principal:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-    background: linear-gradient(135deg, #FF8E53 0%, #FFE082 100%);
+    box-shadow: 0 8px 25px rgba(255, 123, 84, 0.4);
+    background: #FF6B35;
 }
 
 /* --- HEADER Y LOGO --- */
 .header {
     padding: 1.5rem 2rem;
     background-color: var(--color-blanco);
-    box-shadow: 0 2px 20px rgba(139, 95, 191, 0.1);
+    box-shadow: 0 2px 20px rgba(93, 95, 239, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -104,9 +96,7 @@ a {
     align-items: center;
     text-align: center;
     padding: 0 2rem;
-    /*background: var(--color-primario);*/
-    /* Opción 5 - Color personalizado */
-    background: #6A4C93; /* Violeta más oscuro */
+    background: var(--color-primario);
     color: var(--color-blanco);
     position: relative;
 }
@@ -114,8 +104,6 @@ a {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    background: none;
-    -webkit-text-fill-color: var(--color-blanco);
     color: var(--color-blanco);
 }
 
@@ -137,28 +125,6 @@ a {
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     background: var(--color-secundario);
     color: var(--color-blanco);
-}
-
-/* Responsive para hero */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        min-height: 60vh;
-        padding: 0 1rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.2rem;
-    }
 }
 
 /* --- CATEGORÍAS PRINCIPALES --- */
@@ -187,7 +153,7 @@ a {
 
 .filtro-principal-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(139, 95, 191, 0.3);
+    box-shadow: 0 8px 25px rgba(93, 95, 239, 0.3);
     background: var(--color-primario);
     color: var(--color-blanco);
 }
@@ -196,20 +162,7 @@ a {
     background: var(--color-primario);
     color: var(--color-blanco);
     border-color: var(--color-primario);
-    box-shadow: 0 6px 20px rgba(139, 95, 191, 0.4);
-}
-
-/* Botón VER TODO especial */
-.filtro-principal-btn[data-categoria-principal="todos"] {
-    border-color: var(--color-secundario);
-    color: var(--color-secundario);
-}
-
-.filtro-principal-btn[data-categoria-principal="todos"]:hover,
-.filtro-principal-btn[data-categoria-principal="todos"].activo {
-    background: var(--color-secundario);
-    color: var(--color-blanco);
-    border-color: var(--color-secundario);
+    box-shadow: 0 6px 20px rgba(93, 95, 239, 0.4);
 }
 
 /* Colores específicos para cada categoría */
@@ -225,26 +178,38 @@ a {
 }
 
 .filtro-principal-btn[data-categoria-principal="con-materiales"] {
-    border-color: var(--color-accento);
-    color: var(--color-accento);
+    border-color: var(--color-terciario);
+    color: var(--color-terciario);
 }
 
 .filtro-principal-btn[data-categoria-principal="con-materiales"]:hover,
 .filtro-principal-btn[data-categoria-principal="con-materiales"].activo {
-    background: var(--color-accento);
+    background: var(--color-terciario);
     color: var(--color-oscuro);
 }
 
 .filtro-principal-btn[data-categoria-principal="cartas"] {
-    border-color: var(--color-terciario);
+    border-color: var(--color-accento);
     color: var(--color-oscuro);
 }
 
 .filtro-principal-btn[data-categoria-principal="cartas"]:hover,
 .filtro-principal-btn[data-categoria-principal="cartas"].activo {
-    background: var(--color-terciario);
+    background: var(--color-accento);
     color: var(--color-oscuro);
-    border-color: var(--color-terciario);
+    border-color: var(--color-accento);
+}
+
+.filtro-principal-btn[data-categoria-principal="todos"] {
+    border-color: var(--color-secundario);
+    color: var(--color-secundario);
+}
+
+.filtro-principal-btn[data-categoria-principal="todos"]:hover,
+.filtro-principal-btn[data-categoria-principal="todos"].activo {
+    background: var(--color-secundario);
+    color: var(--color-blanco);
+    border-color: var(--color-secundario);
 }
 
 /* --- SUBCATEGORÍAS --- */
@@ -278,25 +243,13 @@ a {
     background: var(--color-primario);
     color: var(--color-blanco);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 95, 191, 0.3);
+    box-shadow: 0 4px 12px rgba(93, 95, 239, 0.3);
 }
 
 .filtro-btn.activo {
     background: var(--color-primario);
     color: var(--color-blanco);
-    box-shadow: 0 4px 15px rgba(139, 95, 191, 0.4);
-}
-
-/* Responsive para subcategorías */
-@media (max-width: 768px) {
-    .filtros {
-        gap: 0.5rem;
-    }
-    
-    .filtro-btn {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
+    box-shadow: 0 4px 15px rgba(93, 95, 239, 0.4);
 }
 
 /* --- GRILLA DE JUEGOS --- */
@@ -312,7 +265,7 @@ a {
     border-radius: 20px;
     padding: 2rem;
     text-align: left;
-    box-shadow: 0 8px 30px rgba(139, 95, 191, 0.1);
+    box-shadow: 0 8px 30px rgba(93, 95, 239, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
@@ -327,12 +280,12 @@ a {
     left: 0;
     right: 0;
     height: 4px;
-    background: var(--gradiente-categoria);
+    background: var(--color-primario);
 }
 
 .game-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(139, 95, 191, 0.2);
+    box-shadow: 0 20px 40px rgba(93, 95, 239, 0.2);
     border-color: var(--color-primario);
 }
 
@@ -348,7 +301,7 @@ a {
 }
 
 .game-card .category {
-    background: var(--color-terciario);
+    background: var(--color-accento);
     color: var(--color-oscuro);
     padding: 6px 15px;
     border-radius: 15px;
@@ -363,7 +316,7 @@ a {
 
 /* --- FORMULARIO DE SUGERENCIAS --- */
 #sugerir { 
-    background: linear-gradient(135deg, var(--color-claro) 0%, var(--color-blanco) 100%);
+    background: var(--color-claro);
     padding: 5rem 2rem;
     margin: 4rem -2rem;
     border-radius: 30px;
@@ -410,7 +363,7 @@ a {
 .sugerir-form textarea:focus {
     outline: none;
     border-color: var(--color-primario);
-    box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.1);
+    box-shadow: 0 0 0 3px rgba(93, 95, 239, 0.1);
 }
 
 .char-counter {
@@ -471,7 +424,7 @@ a {
 }
 
 .footer-social a:hover {
-    color: var(--color-terciario);
+    color: var(--color-accento);
     transform: translateY(-2px);
 }
 
@@ -506,7 +459,7 @@ a {
 }
 
 .meta-item {
-    background: var(--gradiente-categoria);
+    background: var(--color-primario);
     color: var(--color-blanco);
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
@@ -519,7 +472,7 @@ a {
     padding: 3rem;
     border-radius: 25px;
     margin: 2rem 0;
-    box-shadow: 0 10px 40px rgba(139, 95, 191, 0.1);
+    box-shadow: 0 10px 40px rgba(93, 95, 239, 0.1);
     border: 2px solid var(--color-claro);
 }
 
@@ -542,7 +495,7 @@ a {
 }
 
 .example-box {
-    background: linear-gradient(135deg, #F0E6FF 0%, #E6F7FF 100%);
+    background: #F0F4FF;
     padding: 2rem;
     border-radius: 20px;
     margin: 2rem 0;
@@ -563,6 +516,15 @@ a {
         padding: 15px 20px;
         font-size: 1rem;
         min-width: 160px;
+    }
+    
+    .filtros {
+        gap: 0.5rem;
+    }
+    
+    .filtro-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
     }
     
     .juegos-grilla {
@@ -611,6 +573,3 @@ a {
         padding: 2rem 1.5rem;
     }
 }
-
-
-

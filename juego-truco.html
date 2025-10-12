@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Truco</h1>
+                <div class="game-meta">
+                    <span class="meta-item">4 jugadores</span>
+                    <span class="meta-item">30 minutos</span>
+                    <span class="meta-item">Estrategia</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🎴 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Mazo de cartas españolas (40 cartas)</p>
+                
+                <h3>Instrucciones básicas:</h3>
+                <ol>
+                    <li>Se juega en 2 equipos de 2 jugadores cada uno.</li>
+                    <li>Se reparten 3 cartas a cada jugador.</li>
+                    <li>El objetivo es ganar 2 de las 3 manos (o "vueltas").</li>
+                    <li>En cada mano, los jugadores tiran una carta por turno.</li>
+                    <li>Gana la mano quien tenga la carta más alta.</li>
+                    <li>Se puede cantar "truco" para aumentar la apuesta.</li>
+                    <li>Gana el equipo que llegue primero a 30 puntos.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>🎯 Jerarquía de cartas (de mayor a menor):</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                        <div>
+                            <strong>Ancho de Espadas</strong><br>
+                            <strong>Ancho de Bastos</strong><br>
+                            7 de Espadas<br>
+                            7 de Oro<br>
+                        </div>
+                        <div>
+                            3 de cualquier palo<br>
+                            2 de cualquier palo<br>
+                            Figuras (A, 12, 11, 10)<br>
+                            Resto de cartas<br>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>📢 Cantos del Truco:</h3>
+                <ul>
+                    <li><strong>Truco:</strong> Duplica el valor de la mano</li>
+                    <li><strong>Retruco:</strong> Triplica el valor</li>
+                    <li><strong>Vale Cuatro:</strong> Cuadruplica el valor</li>
+                    <li><strong>Envido:</strong> Apuesta por quién tiene mejor juego</li>
+                    <li><strong>Real Envido:</strong> Apuesta más alta</li>
+                    <li><strong>Falta Envido:</strong> Apuesta por ganar el juego completo</li>
+                </ul>
+
+                <h3>🎯 Estrategias básicas:</h3>
+                <ul>
+                    <li>Guardar cartas altas para momentos clave</li>
+                    <li>Observar qué cartas han salido</li>
+                    <li>Cantar truco cuando tengas buenas cartas</li>
+                    <li>Comunicarte con tu compañero mediante señas</li>
+                </ul>
+
+                <h3>🚀 Variantes regionales:</h3>
+                <ul>
+                    <li><strong>Truco Argentino:</strong> Con flor y envido</li>
+                    <li><strong>Truco Cordobés:</strong> Con reglas específicas de Córdoba</li>
+                    <li><strong>Truco Mendocino:</strong> Con variantes locales</li>
+                    <li><strong>Truco Uruguayo:</strong> Con reglas diferentes</li>
+                </ul>
+
+                <h3>🏆 Puntuación:</h3>
+                <ul>
+                    <li><strong>Ganar 2 manos:</strong> 1 punto</li>
+                    <li><strong>Ganar 3 manos:</strong> 2 puntos</li>
+                    <li><strong>Truco aceptado y ganado:</strong> 2 puntos</li>
+                    <li><strong>Retruco ganado:</strong> 3 puntos</li>
+                    <li><strong>Vale cuatro ganado:</strong> 4 puntos</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

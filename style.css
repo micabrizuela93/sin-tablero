@@ -314,15 +314,20 @@ a {
     transition: all 0.3s ease;
 }
 
-/* --- FORMULARIO DE SUGERENCIAS --- */
+/* --- FORMULARIO DE SUGERENCIAS - CORREGIDO --- */
 #sugerir { 
     background: var(--color-claro);
     padding: 5rem 2rem;
-    margin: 4rem -2rem;
+    margin: 4rem 0;
     border-radius: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sugerir-form {
+    width: 100%;
     max-width: 600px;
     margin: 2rem auto 0;
     display: flex;
@@ -334,6 +339,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .form-group.row {
@@ -356,6 +362,7 @@ a {
     font-size: 1rem;
     transition: all 0.3s ease;
     background-color: var(--color-blanco);
+    box-sizing: border-box;
 }
 
 .sugerir-form input:focus,
@@ -384,6 +391,23 @@ a {
 
 .checkbox-label input[type="checkbox"] {
     margin-top: 0.2rem;
+    width: auto;
+}
+
+/* Botón del formulario */
+.sugerir-form .btn-principal {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Mensajes del formulario */
+.form-message {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /* --- FOOTER --- */
@@ -508,6 +532,10 @@ a {
     h2 { font-size: 2rem; }
     .hero h1 { font-size: 2.8rem; }
     
+    .container {
+        padding: 0 1rem;
+    }
+    
     .filtros-principales {
         gap: 0.8rem;
     }
@@ -532,6 +560,21 @@ a {
         gap: 1.5rem;
     }
     
+    /* Formulario responsive */
+    .form-group.row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    #sugerir {
+        padding: 3rem 1rem;
+        margin: 2rem 0;
+    }
+    
+    .sugerir-form {
+        padding: 0;
+    }
+    
     .footer-container { 
         flex-direction: column; 
         text-align: center; 
@@ -545,10 +588,6 @@ a {
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
     .filtros-principales {
         flex-direction: column;
         align-items: center;
@@ -572,112 +611,13 @@ a {
     .instructions {
         padding: 2rem 1.5rem;
     }
-}
-
-/* FORMULARIO RESPONSIVE - CORREGIDO */
-#sugerir {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sugerir-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    box-sizing: border-box;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-    width: 100%;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-coral);
-}
-
-/* Grupo de inputs en fila */
-.form-group.row {
-    display: flex;
-    gap: 1rem;
-}
-
-.form-group.row input {
-    flex: 1;
-}
-
-/* Checkbox */
-.checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-.checkbox-label input[type="checkbox"] {
-    width: auto;
-    margin-top: 0.2rem;
-}
-
-/* Contador de caracteres */
-.char-counter {
-    text-align: right;
-    font-size: 0.8rem;
-    color: #6c757d;
-    margin-top: 0.25rem;
-}
-
-/* Botón centrado */
-.sugerir-form .btn-principal {
-    width: 100%;
-    display: block;
-}
-
-/* Mensajes del formulario */
-.form-message {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1rem;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-/* Para móviles */
-@media (max-width: 768px) {
-    .sugerir-form {
-        padding: 0 1rem;
+    
+    .game-meta {
+        gap: 1rem;
     }
     
-    .form-group.row {
-        flex-direction: column;
-        gap: 0.5rem;
+    .meta-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
     }
 }
-
-/* Para pantallas grandes */
-@media (min-width: 1200px) {
-    .sugerir-form {
-        max-width: 700px;
-    }
-}
-

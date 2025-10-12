@@ -169,36 +169,19 @@ a {
     color: var(--color-primario);
     min-width: 200px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.filtro-principal-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradiente-categoria);
-    transition: left 0.3s ease;
-    z-index: -1;
 }
 
 .filtro-principal-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(139, 95, 191, 0.3);
+    background: var(--color-primario);
     color: var(--color-blanco);
-}
-
-.filtro-principal-btn:hover::before {
-    left: 0;
 }
 
 .filtro-principal-btn.activo {
-    background: var(--gradiente-categoria);
+    background: var(--color-primario);
     color: var(--color-blanco);
-    border-color: transparent;
+    border-color: var(--color-primario);
     box-shadow: 0 6px 20px rgba(139, 95, 191, 0.4);
 }
 
@@ -208,53 +191,46 @@ a {
     color: var(--color-secundario);
 }
 
-.filtro-principal-btn[data-categoria-principal="todos"]::before {
-    background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
-}
-
 .filtro-principal-btn[data-categoria-principal="todos"]:hover,
 .filtro-principal-btn[data-categoria-principal="todos"].activo {
-    background: linear-gradient(135deg, var(--color-secundario), var(--color-terciario));
+    background: var(--color-secundario);
+    color: var(--color-blanco);
+    border-color: var(--color-secundario);
+}
+
+/* Colores específicos para cada categoría */
+.filtro-principal-btn[data-categoria-principal="sin-materiales"] {
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+}
+
+.filtro-principal-btn[data-categoria-principal="sin-materiales"]:hover,
+.filtro-principal-btn[data-categoria-principal="sin-materiales"].activo {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.filtro-principal-btn[data-categoria-principal="con-materiales"] {
+    border-color: var(--color-accento);
+    color: var(--color-accento);
+}
+
+.filtro-principal-btn[data-categoria-principal="con-materiales"]:hover,
+.filtro-principal-btn[data-categoria-principal="con-materiales"].activo {
+    background: var(--color-accento);
     color: var(--color-oscuro);
 }
 
-/* Estilos para las subcategorías */
-.subcategorias {
-    margin-bottom: 2rem;
-    transition: all 0.3s ease;
-}
-
-.filtros {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.filtro-btn {
-    background: var(--color-claro);
-    border: 2px solid transparent;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: var(--fuente-principal);
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.filtro-principal-btn[data-categoria-principal="cartas"] {
+    border-color: var(--color-terciario);
     color: var(--color-oscuro);
 }
 
-.filtro-btn:hover {
-    background: var(--color-primario);
-    color: var(--color-blanco);
-    transform: translateY(-2px);
-}
-
-.filtro-btn.activo {
-    background: var(--color-primario);
-    color: var(--color-blanco);
-    box-shadow: 0 4px 15px rgba(139, 95, 191, 0.3);
+.filtro-principal-btn[data-categoria-principal="cartas"]:hover,
+.filtro-principal-btn[data-categoria-principal="cartas"].activo {
+    background: var(--color-terciario);
+    color: var(--color-oscuro);
+    border-color: var(--color-terciario);
 }
 
 /* --- GRILLA DE JUEGOS --- */
@@ -569,3 +545,4 @@ a {
         padding: 2rem 1.5rem;
     }
 }
+

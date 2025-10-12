@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('🚀 Sin Tablero - Inicializando...');
 
-    // --- LÓGICA PARA CATEGORÍAS PRINCIPALES ---
+    // --- CONFIGURACIÓN INICIAL ---
     const filtrosPrincipales = document.querySelectorAll('.filtro-principal-btn');
     const subcategoriasContainers = document.querySelectorAll('.subcategorias');
     const categoriasJuegos = document.querySelectorAll('.categoria-juegos');
+    const juegosTodosContainer = document.getElementById('juegos-todos');
+    const gameCards = document.querySelectorAll('.game-card');
 
-    // Inicializar: mostrar solo "Sin Materiales" al cargar
-    function inicializarCategorias() {
-        // Ocultar todas las categorías de juegos
+    // --- INICIALIZACIÓN ---
+    function inicializar() {
+        console.log('🎯 Inicializando categorías...');
+        
+        // Ocultar todas las categorías
         categoriasJuegos.forEach(categoria => {
             categoria.style.display = 'none';
         });
@@ -17,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.style.display = 'none';
         });
         
-        // Mostrar solo "Sin Materiales"
+        // Mostrar solo "Sin Materiales" por defecto
         document.getElementById('juegos-sin-materiales').style.display = 'block';
         document.getElementById('subcategorias-sin-materiales').style.display = 'block';
         
@@ -26,134 +31,164 @@ document.addEventListener('DOMContentLoaded', () => {
         if (filtroTodosSin) {
             filtroTodosSin.classList.add('activo');
         }
+
+        console.log('✅ Inicialización completada');
     }
 
-    // Configurar event listeners para categorías principales
+    // --- LÓGICA PARA CATEGORÍAS PRINCIPALES ---
     filtrosPrincipales.forEach(boton => {
         boton.addEventListener('click', () => {
-            console.log('Clic en categoría principal:', boton.dataset.categoriaPrincipal);
+            console.log('📌 Clic en categoría:', boton.dataset.categoriaPrincipal);
             
-            // Manejar estado activo de categorías principales
+            // Manejar estado activo
             filtrosPrincipales.forEach(btn => btn.classList.remove('activo'));
             boton.classList.add('activo');
 
             const categoriaPrincipal = boton.dataset.categoriaPrincipal;
 
-            // Mostrar/ocultar subcategorías correspondientes
-            subcategoriasContainers.forEach(container => {
-                if (container.id === `subcategorias-${categoriaPrincipal}`) {
-                    container.style.display = 'block';
-                    console.log('Mostrando subcategorías:', container.id);
-                } else {
-                    container.style.display = 'none';
-                }
-            });
-
-            // Mostrar/ocultar juegos de la categoría correspondiente
-            categoriasJuegos.forEach(categoria => {
-                if (categoria.id === `juegos-${categoriaPrincipal}`) {
-                    categoria.style.display = 'block';
-                    console.log('Mostrando juegos:', categoria.id);
-                } else {
-                    categoria.style.display = 'none';
-                }
-            });
-
-            // Resetear a "Todos" en las subcategorías
-            const subcategoriaContainer = document.querySelector(`#subcategorias-${categoriaPrincipal}`);
-            if (subcategoriaContainer) {
-                const filtrosSub = subcategoriaContainer.querySelectorAll('.filtro-btn');
-                filtrosSub.forEach(btn => btn.classList.remove('activo'));
-                const filtroTodos = subcategoriaContainer.querySelector('[data-filter^="todos-"]');
-                if (filtroTodos) {
-                    filtroTodos.classList.add('activo');
-                    // Aplicar filtro "todos" inmediatamente
-                    aplicarFiltroSubcategoria(categoriaPrincipal, filtroTodos.dataset.filter);
-                }
+            // Manejar categoría "todos" de forma especial
+            if (categoriaPrincipal === 'todos') {
+                mostrarTodosLosJuegos();
+                return;
             }
+
+            // Para categorías normales
+            manejarCategoriaNormal(categoriaPrincipal);
         });
     });
 
+    function manejarCategoriaNormal(categoriaPrincipal) {
+        // Ocultar todos los juegos primero
+        categoriasJuegos.forEach(categoria => {
+            categoria.style.display = 'none';
+        });
+        
+        // Ocultar todas las subcategorías
+        subcategoriasContainers.forEach(container => {
+            container.style.display = 'none';
+        });
+
+        // Mostrar subcategorías correspondientes
+        const subcategoriaContainer = document.getElementById(`subcategorias-${categoriaPrincipal}`);
+        if (subcategoriaContainer) {
+            subcategoriaContainer.style.display = 'block';
+        }
+
+        // Mostrar juegos correspondientes
+        const juegosCategoria = document.getElementById(`juegos-${categoriaPrincipal}`);
+        if (juegosCategoria) {
+            juegosCategoria.style.display = 'block';
+        }
+
+        // Resetear filtros de subcategorías
+        if (subcategoriaContainer) {
+            const filtrosSub = subcategoriaContainer.querySelectorAll('.filtro-btn');
+            filtrosSub.forEach(btn => btn.classList.remove('activo'));
+            const filtroTodos = subcategoriaContainer.querySelector('[data-filter^="todos-"]');
+            if (filtroTodos) {
+                filtroTodos.classList.add('activo');
+                aplicarFiltroSubcategoria(categoriaPrincipal, filtroTodos.dataset.filter);
+            }
+        }
+    }
+
+    function mostrarTodosLosJuegos() {
+        console.log('🌟 Mostrando todos los juegos...');
+        
+        // Ocultar todas las categorías normales
+        categoriasJuegos.forEach(categoria => {
+            categoria.style.display = 'none';
+        });
+        
+        // Ocultar todas las subcategorías
+        subcategoriasContainers.forEach(container => {
+            container.style.display = 'none';
+        });
+
+        // Mostrar contenedor de "todos"
+        if (juegosTodosContainer) {
+            juegosTodosContainer.style.display = 'block';
+            
+            // Limpiar y llenar con todos los juegos
+            juegosTodosContainer.innerHTML = '<div class="juegos-grilla"></div>';
+            const grilla = juegosTodosContainer.querySelector('.juegos-grilla');
+            
+            gameCards.forEach(card => {
+                const cardClone = card.cloneNode(true);
+                grilla.appendChild(cardClone);
+            });
+
+            console.log(`✅ Mostrando ${gameCards.length} juegos en "Ver Todo"`);
+        }
+    }
+
     // --- LÓGICA PARA FILTROS DE SUBCATEGORÍAS ---
     function aplicarFiltroSubcategoria(categoriaPrincipal, filtro) {
-        console.log('Aplicando filtro:', filtro, 'en categoría:', categoriaPrincipal);
+        console.log('🔍 Aplicando filtro:', filtro, 'en categoría:', categoriaPrincipal);
         
         const juegosCategoria = document.querySelectorAll(`#juegos-${categoriaPrincipal} .game-card`);
-        console.log('Juegos encontrados:', juegosCategoria.length);
-        
         let juegosVisibles = 0;
         
         juegosCategoria.forEach(card => {
             const subcategorias = card.dataset.subcategoria.split(' ');
             
-            // Verificar si el juego coincide con el filtro
             const coincide = filtro.startsWith('todos-') || subcategorias.includes(filtro);
             
             if (coincide) {
                 card.style.display = 'block';
-                card.classList.remove('hidden');
                 juegosVisibles++;
             } else {
                 card.style.display = 'none';
-                card.classList.add('hidden');
             }
         });
         
-        console.log('Juegos visibles después del filtro:', juegosVisibles);
+        console.log(`📊 Juegos visibles: ${juegosVisibles}/${juegosCategoria.length}`);
     }
 
-    // Agregar event listeners a todos los filtros de subcategorías
+    // Event listeners para subcategorías
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('filtro-btn')) {
-            console.log('Clic en subcategoría:', e.target.dataset.filter);
+            console.log('🎯 Clic en subcategoría:', e.target.dataset.filter);
             
-            // Manejar estado activo del botón de subcategoría
+            // Manejar estado activo
             const filtrosGrupo = e.target.parentElement.querySelectorAll('.filtro-btn');
             filtrosGrupo.forEach(btn => btn.classList.remove('activo'));
             e.target.classList.add('activo');
 
             // Obtener categoría principal activa
             const categoriaPrincipalActiva = document.querySelector('.filtro-principal-btn.activo');
-            if (categoriaPrincipalActiva) {
+            if (categoriaPrincipalActiva && categoriaPrincipalActiva.dataset.categoriaPrincipal !== 'todos') {
                 const categoriaPrincipal = categoriaPrincipalActiva.dataset.categoriaPrincipal;
-                
-                // Aplicar filtro
                 aplicarFiltroSubcategoria(categoriaPrincipal, e.target.dataset.filter);
             }
         }
     });
 
-    // --- LÓGICA PARA HACER LOS GAME CARDS CLICKEABLES ---
-    const gameCards = document.querySelectorAll('.game-card');
-    
-    gameCards.forEach(card => {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', (e) => {
-            // Prevenir que el clic se propague a otros event listeners
-            e.stopPropagation();
-            
-            const gameId = card.dataset.id;
-            console.log('Clic en juego:', gameId);
-            
-            // Verificar si el juego existe antes de redirigir
-            if (gameId && gameId !== 'undefined') {
-                window.location.href = `juego-${gameId}.html`;
-            } else {
-                console.warn('Juego sin ID definido:', card);
-                // Mostrar un mensaje al usuario
-                alert('Este juego aún no tiene página de detalles. ¡Próximamente!');
+    // --- GAME CARDS CLICKEABLES ---
+    function hacerGameCardsClickeables() {
+        document.addEventListener('click', (e) => {
+            const gameCard = e.target.closest('.game-card');
+            if (gameCard) {
+                const gameId = gameCard.dataset.id;
+                console.log('🎮 Clic en juego:', gameId);
+                
+                if (gameId && gameId !== 'undefined') {
+                    window.location.href = `juego-${gameId}.html`;
+                } else {
+                    alert('Este juego aún no tiene página de detalles. ¡Próximamente!');
+                }
             }
         });
-    });
+    }
 
-    // --- LÓGICA PARA EL FORMULARIO DE SUGERENCIAS ---
+    // --- FORMULARIO DE SUGERENCIAS ---
     const suggestionForm = document.getElementById('suggestionForm');
     const categoriaPrincipalForm = document.getElementById('categoria-principal-form');
     const subcategoriaForm = document.getElementById('subcategoria-form');
     const charCount = document.getElementById('charCount');
     const descripcionTextarea = document.querySelector('textarea[name="descripcion"]');
 
-    // Mapeo de subcategorías por categoría principal
+    // Mapeo de subcategorías
     const subcategoriasMap = {
         'sin-materiales': [
             { value: 'juntadas-sin', label: 'Juntadas' },
@@ -174,13 +209,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
 
-    // Actualizar subcategorías cuando cambia la categoría principal en el formulario
+    // Configurar formulario
     if (categoriaPrincipalForm) {
         categoriaPrincipalForm.addEventListener('change', () => {
             const categoriaSeleccionada = categoriaPrincipalForm.value;
             const subcategorias = subcategoriasMap[categoriaSeleccionada] || [];
             
-            // Limpiar y llenar el select de subcategorías
             subcategoriaForm.innerHTML = '<option value="">Subcategoría *</option>';
             subcategorias.forEach(subcat => {
                 const option = document.createElement('option');
@@ -191,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Contador de caracteres para la descripción
+    // Contador de caracteres
     if (descripcionTextarea && charCount) {
         descripcionTextarea.addEventListener('input', () => {
             const length = descripcionTextarea.value.length;
@@ -205,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Envío del formulario (versión temporal con localStorage)
+    // Envío del formulario
     if (suggestionForm) {
         suggestionForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -224,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 fecha: new Date().toLocaleString('es-AR')
             };
 
-            // Validar campos obligatorios
+            // Validar
             if (!suggestion.juego || !suggestion.categoria_principal || !suggestion.subcategoria || !suggestion.descripcion) {
                 alert('Por favor completa todos los campos obligatorios (*)');
                 return;
@@ -235,28 +269,23 @@ document.addEventListener('DOMContentLoaded', () => {
             existingSuggestions.push(suggestion);
             localStorage.setItem('sugerenciasSinTablero', JSON.stringify(existingSuggestions));
 
-            // Mostrar mensaje de éxito
-            alert(`¡Gracias ${suggestion.nombre}! Tu sugerencia "${suggestion.juego}" fue guardada. La revisaremos pronto.`);
+            alert(`¡Gracias ${suggestion.nombre}! Tu sugerencia "${suggestion.juego}" fue guardada.`);
             
             // Limpiar formulario
             suggestionForm.reset();
             if (charCount) charCount.textContent = '0';
-            
-            // Resetear subcategorías
             if (subcategoriaForm) {
                 subcategoriaForm.innerHTML = '<option value="">Subcategoría *</option>';
             }
         });
     }
 
-    // --- INICIALIZACIÓN ---
-    inicializarCategorias();
-    console.log('Sin Tablero - JavaScript cargado correctamente');
-
-    // Debug: mostrar estado inicial
-    console.log('Categorías principales:', filtrosPrincipales.length);
-    console.log('Subcategorías containers:', subcategoriasContainers.length);
-    console.log('Categorías juegos:', categoriasJuegos.length);
-    console.log('Game cards:', gameCards.length);
-
+    // --- EJECUCIÓN INICIAL ---
+    inicializar();
+    hacerGameCardsClickeables();
+    
+    console.log('🎉 Sin Tablero completamente cargado!');
+    console.log('📊 Estadísticas:');
+    console.log('  - Categorías principales:', filtrosPrincipales.length);
+    console.log('  - Juegos totales:', gameCards.length);
 });

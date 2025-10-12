@@ -251,7 +251,7 @@ a {
     border-color: var(--color-secundario);
 }
 
-/* --- SUBCATEGORÍAS - ESTILO MINIMALISTA --- */
+/* --- SUBCATEGORÍAS - ESTILO MEJORADO --- */
 .subcategorias {
     margin-bottom: 2rem;
     transition: all 0.3s ease;
@@ -267,7 +267,7 @@ a {
 
 .filtro-btn {
     background: var(--color-blanco);
-    border: 1.5px solid #e2e8f0;
+    border: 2px solid #e2e8f0;
     border-radius: 8px;
     padding: 0.7rem 1.5rem;
     cursor: pointer;
@@ -301,31 +301,31 @@ a {
     width: 80%;
 }
 
+/* SUBCATEGORÍAS ACTIVAS - COLORES CLAROS CON BORDE */
 .filtro-btn.activo {
-    background: var(--color-primario);
-    color: var(--color-blanco);
+    background: var(--color-claro);
+    color: var(--color-oscuro);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#subcategorias-sin-materiales .filtro-btn.activo {
     border-color: var(--color-primario);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    color: var(--color-primario);
+}
+
+#subcategorias-con-materiales .filtro-btn.activo {
+    border-color: var(--color-terciario);
+    color: var(--color-terciario);
+}
+
+#subcategorias-cartas .filtro-btn.activo {
+    border-color: var(--color-accento);
+    color: var(--color-accento);
 }
 
 .filtro-btn.activo::after {
     width: 0;
-}
-
-/* Colores de subcategorías según la categoría principal */
-#subcategorias-sin-materiales .filtro-btn.activo {
-    background: var(--color-primario);
-    border-color: var(--color-primario);
-}
-
-#subcategorias-con-materiales .filtro-btn.activo {
-    background: var(--color-terciario);
-    border-color: var(--color-terciario);
-}
-
-#subcategorias-cartas .filtro-btn.activo {
-    background: var(--color-accento);
-    border-color: var(--color-accento);
 }
 
 /* Efectos hover específicos por categoría */
@@ -344,7 +344,7 @@ a {
     border-color: var(--color-accento);
 }
 
-/* --- GRILLA DE JUEGOS --- */
+/* --- GRILLA DE JUEGOS - MEJORADA --- */
 .juegos-grilla {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -392,14 +392,23 @@ a {
     opacity: 0.8;
 }
 
+/* ETIQUETAS DE CATEGORÍA MEJORADAS */
+.game-card .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
 .game-card .category {
-    background: var(--color-accento);
-    color: var(--color-oscuro);
-    padding: 6px 15px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    background: var(--color-claro);
+    color: var(--color-gris);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
     display: inline-block;
+    border: 1px solid #e2e8f0;
 }
 
 .categoria-juegos {
@@ -582,12 +591,13 @@ a {
 }
 
 .meta-item {
-    background: var(--color-primario);
-    color: var(--color-blanco);
+    background: var(--color-claro);
+    color: var(--color-oscuro);
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 600;
+    border: 1px solid #e2e8f0;
 }
 
 .instructions {
@@ -748,5 +758,14 @@ a {
     .meta-item {
         padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
+    }
+    
+    .game-card .categories {
+        gap: 0.3rem;
+    }
+    
+    .game-card .category {
+        font-size: 0.7rem;
+        padding: 3px 8px;
     }
 }

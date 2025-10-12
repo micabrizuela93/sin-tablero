@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tute - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Tute</h1>
+                <div class="game-meta">
+                    <span class="meta-item">2-4 jugadores</span>
+                    <span class="meta-item">40 minutos</span>
+                    <span class="meta-item">Estrategia</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🎺 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Mazo de cartas españolas (40 cartas)</p>
+                
+                <h3>Instrucciones básicas:</h3>
+                <ol>
+                    <li>El objetivo es ganar bazas y cantar "tute" cuando tengas el rey y caballo del mismo palo.</li>
+                    <li>Se reparten 8 cartas a cada jugador (en 4 jugadores) o 12 cartas (en 2 jugadores).</li>
+                    <li>Se elige el palo de triunfo (el de la última carta del mazo).</li>
+                    <li>Los jugadores tiran cartas por turnos, siguiendo el palo inicial.</li>
+                    <li>Gana la baza quien tire la carta más alta del palo inicial o un triunfo.</li>
+                    <li>Se pueden cantar "cantos" durante el juego para sumar puntos.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>🎯 Jerarquía de cartas (de mayor a menor):</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                        <div>
+                            <strong>Triunfos:</strong><br>
+                            2 (más alto)<br>
+                            As<br>
+                            3<br>
+                            Rey<br>
+                            Caballo<br>
+                            Sota<br>
+                            7, 6, 5, 4<br>
+                        </div>
+                        <div>
+                            <strong>Otros palos:</strong><br>
+                            As (más alto)<br>
+                            3<br>
+                            Rey<br>
+                            Caballo<br>
+                            Sota<br>
+                            7, 6, 5, 4, 2<br>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>📢 Cantos del Tute:</h3>
+                <ul>
+                    <li><strong>Las 40:</strong> Tener el rey y caballo del mismo palo (no triunfo)</li>
+                    <li><strong>Las 20:</strong> Tener el rey y caballo de triunfo</li>
+                    <li><strong>Tute:</strong> Tener los 4 reyes o los 4 caballos</li>
+                    <li><strong>Puntos en juego:</strong> Las 40 = 40 pts, Las 20 = 20 pts, Tute = gana la partida</li>
+                </ul>
+
+                <h3>🏆 Puntuación por cartas:</h3>
+                <ul>
+                    <li><strong>As:</strong> 11 puntos</li>
+                    <li><strong>3:</strong> 10 puntos</li>
+                    <li><strong>Rey:</strong> 4 puntos</li>
+                    <li><strong>Caballo:</strong> 3 puntos</li>
+                    <li><strong>Sota:</strong> 2 puntos</li>
+                    <li><strong>Otras cartas:</strong> 0 puntos</li>
+                </ul>
+
+                <h3>💡 Estrategias:</h3>
+                <ul>
+                    <li>Guardar triunfos altos para bazas importantes</li>
+                    <li>Intentar cortar bazas con triunfos cuando no sigues el palo</li>
+                    <li>Memorizar cartas que han salido</li>
+                    <li>No cantar demasiado pronto si tienes buenas cartas</li>
+                </ul>
+
+                <h3>🚀 Variantes:</h3>
+                <ul>
+                    <li><strong>Tute Cabrero:</strong> Versión más rápida y simple</li>
+                    <li><strong>Tute Poderoso:</strong> Con reglas adicionales</li>
+                    <li><strong>Tute por equipos:</strong> 2 vs 2</li>
+                    <li><strong>Tute a 100 puntos:</strong> Partida más larga</li>
+                </ul>
+
+                <h3>🎯 Ganar la partida:</h3>
+                <ul>
+                    <li><strong>Cantar Tute:</strong> Gana automáticamente</li>
+                    <li><strong>Llegar a 101 puntos:</strong> Gana la partida</li>
+                    <li><strong>Ganar última baza:</strong> 10 puntos extra</li>
+                    <li><strong>Ganar mayoría de bazas:</strong> 10 puntos extra</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

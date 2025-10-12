@@ -317,19 +317,27 @@ a {
 /* --- FORMULARIO DE SUGERENCIAS - CORREGIDO --- */
 #sugerir { 
     background: var(--color-claro);
-    padding: 5rem 2rem;
+    padding: 5rem 0;
     margin: 4rem 0;
-    border-radius: 30px;
+    border-radius: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+#sugerir .container {
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
 .sugerir-form {
     width: 100%;
     max-width: 600px;
-    margin: 2rem auto 0;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -408,6 +416,22 @@ a {
     margin-top: 1rem;
     text-align: center;
     box-sizing: border-box;
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+    .form-group.row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    #sugerir {
+        padding: 3rem 0;
+    }
+    
+    #sugerir .container {
+        padding: 0 1rem;
+    }
 }
 
 /* --- FOOTER --- */
@@ -621,3 +645,4 @@ a {
         font-size: 0.8rem;
     }
 }
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinchón - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Chinchón</h1>
+                <div class="game-meta">
+                    <span class="meta-item">2-6 jugadores</span>
+                    <span class="meta-item">45 minutos</span>
+                    <span class="meta-item">Familia</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🃏 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Mazo de cartas españolas (40 o 48 cartas)</p>
+                
+                <h3>Instrucciones básicas:</h3>
+                <ol>
+                    <li>El objetivo es formar escaleras del mismo palo o grupos de cartas iguales.</li>
+                    <li>Se reparten 7 cartas a cada jugador.</li>
+                    <li>El mazo restante se pone en el centro y se voltea una carta para empezar el descarte.</li>
+                    <li>En tu turno, robas una carta del mazo o del descarte.</li>
+                    <li>Intentas formar combinaciones con tus cartas.</li>
+                    <li>Finalizas tu turno descartando una carta.</li>
+                    <li>Gana quien primero baje todas sus cartas en combinaciones válidas.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>📋 Combinaciones válidas:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div>
+                            <strong>Escalera (3+ cartas):</strong><br>
+                            🔴 5 - 6 - 7<br>
+                            🟢 10 - 11 - 12<br>
+                            <em>Mismo palo, números consecutivos</em>
+                        </div>
+                        <div>
+                            <strong>Grupo (3-4 cartas):</strong><br>
+                            7🔴 - 7🟢 - 7⚫<br>
+                            3🔴 - 3🟢 - 3⚫ - 3🟡<br>
+                            <em>Mismo número, palos diferentes</em>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🎯 Puntuación:</h3>
+                <ul>
+                    <li><strong>Chinchón (7 cartas en escalera):</strong> 0 puntos (¡gana automáticamente!)</li>
+                    <li><strong>Cartas bajadas:</strong> 0 puntos</li>
+                    <li><strong>Cartas en mano:</strong> Se suman sus valores</li>
+                    <li><strong>Figuras (10, 11, 12):</strong> 10 puntos cada una</li>
+                    <li><strong>Comodines (si se usan):</strong> 25 puntos</li>
+                </ul>
+
+                <h3>💡 Estrategias:</h3>
+                <ul>
+                    <li>Mantener cartas que puedan formar múltiples combinaciones</li>
+                    <li>Observar qué cartas descartan los oponentes</li>
+                    <li>No mantener muchas figuras si no puedes bajarlas</li>
+                    <li>Planear tu chinchón desde el principio</li>
+                </ul>
+
+                <h3>🚀 Variantes:</h3>
+                <ul>
+                    <li><strong>Chinchón con comodines:</strong> Más estratégico</li>
+                    <li><strong>Chinchón rápido:</strong> Solo 5 cartas por jugador</li>
+                    <li><strong>Chinchón por equipos:</strong> 2 vs 2</li>
+                    <li><strong>Chinchón con 48 cartas:</strong> Incluye 8 y 9</li>
+                </ul>
+
+                <h3>🏆 Ganar el juego:</h3>
+                <ul>
+                    <li>El juego termina cuando un jugador llega a 100 puntos</li>
+                    <li>Gana quien tenga menos puntos al final</li>
+                    <li>Hacer chinchón termina la ronda inmediatamente</li>
+                </ul>
+
+                <h3>👨‍👩‍👧‍👦 Perfecto para:</h3>
+                <ul>
+                    <li>Juegos familiares de sobremesa</li>
+                    <li>Desarrollar pensamiento estratégico</li>
+                    <li>Reuniones con amigos</li>
+                    <li>Ejercitar la memoria y planificación</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>

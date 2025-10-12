@@ -104,20 +104,9 @@ a {
     align-items: center;
     text-align: center;
     padding: 0 2rem;
-    background: var(--gradiente-hero);
+    background: var(--color-primario);
     color: var(--color-blanco);
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="80" r="0.7" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
 }
 
 .hero h1 {
@@ -126,7 +115,6 @@ a {
     background: none;
     -webkit-text-fill-color: var(--color-blanco);
     color: var(--color-blanco);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
@@ -145,6 +133,30 @@ a {
 .hero .btn-principal:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    background: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+/* Responsive para hero */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 60vh;
+        padding: 0 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
 }
 
 /* --- CATEGORÍAS PRINCIPALES --- */
@@ -231,6 +243,58 @@ a {
     background: var(--color-terciario);
     color: var(--color-oscuro);
     border-color: var(--color-terciario);
+}
+
+/* --- SUBCATEGORÍAS --- */
+.subcategorias {
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    background: var(--color-claro);
+    border: 2px solid var(--color-primario);
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: var(--color-primario);
+}
+
+.filtro-btn:hover {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 95, 191, 0.3);
+}
+
+.filtro-btn.activo {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    box-shadow: 0 4px 15px rgba(139, 95, 191, 0.4);
+}
+
+/* Responsive para subcategorías */
+@media (max-width: 768px) {
+    .filtros {
+        gap: 0.5rem;
+    }
+    
+    .filtro-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
 }
 
 /* --- GRILLA DE JUEGOS --- */
@@ -545,4 +609,5 @@ a {
         padding: 2rem 1.5rem;
     }
 }
+
 

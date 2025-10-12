@@ -104,7 +104,9 @@ a {
     align-items: center;
     text-align: center;
     padding: 0 2rem;
-    background: var(--color-primario);
+    /*background: var(--color-primario);*/
+    /* Opción 5 - Color personalizado */
+    background: #6A4C93; /* Violeta más oscuro */
     color: var(--color-blanco);
     position: relative;
 }
@@ -609,5 +611,6 @@ a {
         padding: 2rem 1.5rem;
     }
 }
+
 
 

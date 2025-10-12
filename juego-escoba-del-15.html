@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escoba del 15 - Sin Tablero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="color: inherit;">🎲 Sin Tablero</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html#biblioteca" class="back-btn">← Volver a la biblioteca</a>
+        
+        <div class="game-detail">
+            <div class="game-header">
+                <h1>Escoba del 15</h1>
+                <div class="game-meta">
+                    <span class="meta-item">2-4 jugadores</span>
+                    <span class="meta-item">25 minutos</span>
+                    <span class="meta-item">Familia • Rápidos</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>🧹 Cómo Jugar</h2>
+                <p><strong>Materiales necesarios:</strong> Mazo de cartas españolas (40 cartas)</p>
+                
+                <h3>Instrucciones básicas:</h3>
+                <ol>
+                    <li>El objetivo es hacer "escobas" capturando cartas que sumen 15.</li>
+                    <li>Se reparten 3 cartas a cada jugador y se colocan 4 cartas boca arriba en la mesa.</li>
+                    <li>En tu turno, juegas una carta de tu mano.</li>
+                    <li>Si con tu carta puedes capturar cartas que sumen 15, las tomas.</li>
+                    <li>Si limpias toda la mesa (haces escoba), ganas un punto extra.</li>
+                    <li>Si no puedes capturar, dejas tu carta en la mesa.</li>
+                    <li>Gana quien tenga más puntos al final de todas las rondas.</li>
+                </ol>
+
+                <div class="example-box">
+                    <h4>📝 Ejemplos de captura:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div>
+                            <strong>Captura simple:</strong><br>
+                            Mesa: 7🔴<br>
+                            Juegas: 8🟢<br>
+                            Resultado: 7 + 8 = 15 ✅
+                        </div>
+                        <div>
+                            <strong>Captura múltiple:</strong><br>
+                            Mesa: 5🔴, 4🟢, 6⚫<br>
+                            Juegas: 5🟡<br>
+                            Resultado: 5 + 4 + 6 = 15 ✅
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🎯 Valores de las cartas:</h3>
+                <ul>
+                    <li><strong>As (1):</strong> 1 punto</li>
+                    <li><strong>2-7:</strong> Su valor numérico</li>
+                    <li><strong>Sota (10):</strong> 8 puntos</li>
+                    <li><strong>Caballo (11):</strong> 9 puntos</li>
+                    <li><strong>Rey (12):</strong> 10 puntos</li>
+                </ul>
+
+                <h3>🏆 Puntuación:</h3>
+                <ul>
+                    <li><strong>Escoba (limpiar mesa):</strong> 1 punto</li>
+                    <li><strong>Mayoría de cartas:</strong> 1 punto</li>
+                    <li><strong>Mayoría de oros (🔴):</strong> 1 punto</li>
+                    <li><strong>7 de oros (7🔴):</strong> 1 punto</li>
+                    <li><strong>Mayoría de sietes:</strong> 1 punto</li>
+                    <li><strong>Primera escoba:</strong> 1 punto extra (opcional)</li>
+                </ul>
+
+                <h3>💡 Estrategias:</h3>
+                <ul>
+                    <li>Priorizar hacer escobas cuando sea posible</li>
+                    <li>Guardar el 7 de oros para momentos clave</li>
+                    <li>Observar qué cartas quedan en el mazo</li>
+                    <li>No dejar combinaciones fáciles para el siguiente jugador</li>
+                </ul>
+
+                <h3>🚀 Variantes:</h3>
+                <ul>
+                    <li><strong>Escoba a 21 puntos:</strong> Más rondas</li>
+                    <li><strong>Escoba por equipos:</strong> 2 vs 2</li>
+                    <li><strong>Escoba rápida:</strong> Solo 2 cartas por jugador</li>
+                    <li><strong>Escoba con 48 cartas:</strong> Incluye 8 y 9</li>
+                </ul>
+
+                <h3>🎯 Reglas especiales:</h3>
+                <ul>
+                    <li>Si al repartir hay cartas que suman 15 en la mesa, el repartidor las captura</li>
+                    <li>Puedes capturar múltiples combinaciones si suman 15</li>
+                    <li>Si no hay cartas en la mesa, tu carta se queda ahí</li>
+                    <li>El juego termina cuando se acaban todas las cartas</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <p><strong>Sin Tablero</strong> - Juegos para cada momento</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Sin Tablero</p>
+    </footer>
+</body>
+</html>
